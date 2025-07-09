@@ -1,3 +1,4 @@
+import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -7,7 +8,7 @@ export default function NavBar() {
     <div className="container flex h-14 items-center">
       <div className="mr-4 hidden md:flex">
         <Link className="mr-6 flex items-center space-x-2" href="/">
-          <span className="hidden font-bold sm:inline-block">John.dev</span>
+          <span className="hidden font-bold sm:inline-block">Jorge Rodríguez Díaz</span>
         </Link>
         <nav className="flex items-center space-x-6 text-sm font-medium">
           <Link href="#about" className="transition-colors hover:text-foreground/80">
@@ -34,6 +35,7 @@ export default function NavBar() {
           Resume
         </Link>
       </Button>
+      <ThemeToggle />
     </div>
   </header>;
 }
