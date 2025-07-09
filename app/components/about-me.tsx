@@ -1,10 +1,22 @@
+
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, Twitter, } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function AboutMe() {
   return <div className="flex flex-col items-center justify-center space-y-4 text-center">
-    <div className="space-y-2">
+    <div className="space-y-4">
+      <div className="relative w-32 h-32 mx-auto">
+        <Image
+          src="/profile-photo.jpeg"
+          alt="Profile photo"
+          fill
+          className="rounded-full object-cover"
+          priority
+        />
+      </div>
+
       <h1 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-3xl lg:text-6xl/none">
         Jorge Rodríguez Díaz
       </h1>
