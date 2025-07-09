@@ -1,10 +1,10 @@
 "use client"
 
+import { event } from '@/lib/gtag';
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Badge } from "@/components/ui/badge"
 import {
   Mail,
   User,
@@ -14,11 +14,8 @@ import {
   XCircle,
   Loader2,
   MapPin,
-  Phone,
-  Globe,
   Linkedin,
   Github,
-  Calendar,
   Clock
 } from "lucide-react"
 import { useState, useRef } from "react"
@@ -216,7 +213,8 @@ export default function ContactForm() {
     }
   }
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
     // Validate form
     const validationErrors = validateForm(formData)
     if (validationErrors.length > 0) {
@@ -228,6 +226,10 @@ export default function ContactForm() {
     setErrors([])
 
     try {
+      event('contact_form_submit', {
+        event_category: 'engagement',
+        event_label: 'contact_form',
+      });
       const response = await submitContactForm(formData)
       setMessage(response.message)
       setStatus("success")

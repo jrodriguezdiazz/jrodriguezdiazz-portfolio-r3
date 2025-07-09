@@ -72,27 +72,27 @@ const PROFICIENCY_CONFIG: Record<ProficiencyLevel, {
 }> = {
   beginner: {
     label: "Beginner",
-    color: "text-blue-600",
-    bgColor: "bg-blue-50",
-    dotColor: "bg-blue-400"
+    color: "text-blue-600 dark:text-blue-400",
+    bgColor: "bg-blue-50 dark:bg-blue-950/50 border-blue-200 dark:border-blue-800",
+    dotColor: "bg-blue-400 dark:bg-blue-500"
   },
   intermediate: {
     label: "Intermediate",
-    color: "text-yellow-600",
-    bgColor: "bg-yellow-50",
-    dotColor: "bg-yellow-400"
+    color: "text-yellow-600 dark:text-yellow-400",
+    bgColor: "bg-yellow-50 dark:bg-yellow-950/50 border-yellow-200 dark:border-yellow-800",
+    dotColor: "bg-yellow-400 dark:bg-yellow-500"
   },
   advanced: {
     label: "Advanced",
-    color: "text-green-600",
-    bgColor: "bg-green-50",
-    dotColor: "bg-green-400"
+    color: "text-green-600 dark:text-green-400",
+    bgColor: "bg-green-50 dark:bg-green-950/50 border-green-200 dark:border-green-800",
+    dotColor: "bg-green-400 dark:bg-green-500"
   },
   expert: {
     label: "Expert",
-    color: "text-purple-600",
-    bgColor: "bg-purple-50",
-    dotColor: "bg-purple-400"
+    color: "text-purple-600 dark:text-purple-400",
+    bgColor: "bg-purple-50 dark:bg-purple-950/50 border-purple-200 dark:border-purple-800",
+    dotColor: "bg-purple-400 dark:bg-purple-500"
   }
 };
 
@@ -182,7 +182,7 @@ const ProficiencyIndicator: React.FC<ProficiencyIndicatorProps> = ({ proficiency
           <div
             key={dot}
             className={`w-2 h-2 rounded-full ${
-              dot < filledDots ? config.dotColor : "bg-gray-200"
+              dot < filledDots ? config.dotColor : "bg-gray-200 dark:bg-gray-700"
             }`}
           />
         ))}
@@ -208,15 +208,15 @@ const SkillBadge: React.FC<SkillBadgeProps> = ({ skill }) => {
       ${skill.isCore ? 'ring-2 ring-primary/20' : ''}
     `}>
       <div className="flex items-center gap-2">
-        <skill.icon className="w-5 h-5" />
-        <span className="font-medium text-sm">{skill.name}</span>
-        {skill.isCore && <Star className="w-3 h-3 text-amber-500" />}
+        <skill.icon className="w-5 h-5 text-foreground" />
+        <span className="font-medium text-sm text-foreground">{skill.name}</span>
+        {skill.isCore && <Star className="w-3 h-3 text-amber-500 dark:text-amber-400" />}
       </div>
 
       <ProficiencyIndicator proficiency={skill.proficiency} years={skill.yearsOfExperience} />
 
       {/* Tooltip */}
-      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-10">
+      <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-900 dark:bg-gray-800 text-white dark:text-gray-100 text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-10">
         {config.label} • {skill.yearsOfExperience} years
         {skill.isCore && " • Core Skill"}
       </div>
@@ -239,7 +239,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ category }) => {
           <category.categoryIcon className="w-5 h-5 text-primary" />
         </div>
         <div className="flex-1">
-          <h3 className="text-lg font-semibold">{category.category}</h3>
+          <h3 className="text-lg font-semibold text-foreground">{category.category}</h3>
           <p className="text-sm text-muted-foreground mt-1">{category.description}</p>
         </div>
         <Badge variant="outline" className="ml-auto">
@@ -251,8 +251,8 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ category }) => {
       {coreSkills.length > 0 && (
         <div className="mb-4">
           <div className="flex items-center gap-2 mb-3">
-            <Award className="w-4 h-4 text-amber-500" />
-            <h4 className="text-sm font-medium text-amber-700">Core Skills</h4>
+            <Award className="w-4 h-4 text-amber-500 dark:text-amber-400" />
+            <h4 className="text-sm font-medium text-amber-700 dark:text-amber-300">Core Skills</h4>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {coreSkills.map((skill) => (
@@ -298,20 +298,20 @@ const TechStackStats: React.FC<TechStackStatsProps> = ({ technologies }) => {
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-      <div className="text-center p-4 bg-primary/5 rounded-lg">
+      <div className="text-center p-4 bg-primary/5 dark:bg-primary/10 rounded-lg">
         <div className="text-2xl font-bold text-primary">{stats.totalSkills}</div>
         <div className="text-sm text-muted-foreground">Total Skills</div>
       </div>
-      <div className="text-center p-4 bg-amber-50 rounded-lg">
-        <div className="text-2xl font-bold text-amber-600">{stats.coreSkills}</div>
+      <div className="text-center p-4 bg-amber-50 dark:bg-amber-950/50 rounded-lg">
+        <div className="text-2xl font-bold text-amber-600 dark:text-amber-400">{stats.coreSkills}</div>
         <div className="text-sm text-muted-foreground">Core Skills</div>
       </div>
-      <div className="text-center p-4 bg-purple-50 rounded-lg">
-        <div className="text-2xl font-bold text-purple-600">{stats.expertSkills}</div>
+      <div className="text-center p-4 bg-purple-50 dark:bg-purple-950/50 rounded-lg">
+        <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">{stats.expertSkills}</div>
         <div className="text-sm text-muted-foreground">Expert Level</div>
       </div>
-      <div className="text-center p-4 bg-green-50 rounded-lg">
-        <div className="text-2xl font-bold text-green-600">{stats.avgExperience}</div>
+      <div className="text-center p-4 bg-green-50 dark:bg-green-950/50 rounded-lg">
+        <div className="text-2xl font-bold text-green-600 dark:text-green-400">{stats.avgExperience}</div>
         <div className="text-sm text-muted-foreground">Avg Years</div>
       </div>
     </div>
@@ -331,28 +331,28 @@ export default function TechStack() {
       <div className="mt-8 p-4 bg-muted/30 rounded-lg">
         <div className="flex items-center gap-2 mb-2">
           <TrendingUp className="w-4 h-4 text-primary" />
-          <h3 className="font-medium">Legend</h3>
+          <h3 className="font-medium text-foreground">Legend</h3>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
           <div className="flex items-center gap-2">
-            <Star className="w-3 h-3 text-amber-500" />
-            <span>Core Skill</span>
+            <Star className="w-3 h-3 text-amber-500 dark:text-amber-400" />
+            <span className="text-foreground">Core Skill</span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-            <span>Beginner</span>
+            <div className="w-2 h-2 bg-blue-400 dark:bg-blue-500 rounded-full"></div>
+            <span className="text-foreground">Beginner</span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-            <span>Intermediate</span>
+            <div className="w-2 h-2 bg-yellow-400 dark:bg-yellow-500 rounded-full"></div>
+            <span className="text-foreground">Intermediate</span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-            <span>Advanced</span>
+            <div className="w-2 h-2 bg-green-400 dark:bg-green-500 rounded-full"></div>
+            <span className="text-foreground">Advanced</span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
-            <span>Expert</span>
+            <div className="w-2 h-2 bg-purple-400 dark:bg-purple-500 rounded-full"></div>
+            <span className="text-foreground">Expert</span>
           </div>
         </div>
       </div>

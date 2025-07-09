@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Suspense } from "react";
 import AboutMe from "./components/about-me";
 import ContactForm from "./components/contact-form";
@@ -49,8 +48,8 @@ const PROJECTS = [
 
 // Section wrapper component for consistency
 const Section = ({ id, className = "", children }) => (
-  <section id={id} className={`py-12 md:py-24 lg:py-32 ${className}`}>
-    <div className="container px-4 md:px-6">
+  <section id={id} className={`py-16 ${className}`}>
+    <div className="container mx-auto px-4 md:px-6 max-w-7xl">
       {children}
     </div>
   </section>
@@ -68,7 +67,7 @@ export default function Page() {
     <div className="min-h-screen bg-background">
       <NavBar />
 
-      <main className="container px-4 md:px-6">
+      <main className="w-full">
         {/* About Section */}
         <Section id="about">
           <Suspense fallback={<SectionSkeleton />}>
@@ -123,24 +122,10 @@ export default function Page() {
 
       {/* Footer */}
       <footer className="border-t bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm">
-        <div className="container flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6">
+        <div className="container mx-auto flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 max-w-7xl">
           <p className="text-xs text-gray-500 dark:text-gray-400">
-            © 2025 jrodriguezdiazz.dev. All rights reserved.
+            © {new Date().getFullYear()} jrodriguezdiazz.vercel.app. All rights reserved.
           </p>
-          <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-            <Link
-              className="text-xs hover:underline underline-offset-4 transition-colors hover:text-gray-900 dark:hover:text-gray-100"
-              href="#"
-            >
-              Terms of Service
-            </Link>
-            <Link
-              className="text-xs hover:underline underline-offset-4 transition-colors hover:text-gray-900 dark:hover:text-gray-100"
-              href="#"
-            >
-              Privacy
-            </Link>
-          </nav>
         </div>
       </footer>
     </div>
