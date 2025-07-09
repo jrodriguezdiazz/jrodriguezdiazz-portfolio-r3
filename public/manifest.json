@@ -1,0 +1,111 @@
+{
+  "name": "Jorge Rodríguez Díaz - Senior Software Engineer Portfolio",
+  "short_name": "Jorge Rodríguez",
+  "description": "Senior Software Engineer with 6+ years of experience in React, Node.js, and PostgreSQL. Portfolio showcasing projects, experience, and technical expertise.",
+  "lang": "en-US",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#3b82f6",
+  "background_color": "#ffffff",
+  "categories": ["portfolio", "developer", "technology", "professional"],
+  "screenshots": [
+    {
+      "src": "/screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Portfolio homepage showcasing projects and experience"
+    },
+    {
+      "src": "/screenshot-narrow.png",
+      "sizes": "640x1136",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Mobile view of portfolio"
+    }
+  ],
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "About Me",
+      "short_name": "About",
+      "description": "Learn more about Jorge's background and experience",
+      "url": "/#about"
+    },
+    {
+      "name": "Projects",
+      "short_name": "Projects",
+      "description": "View Jorge's portfolio projects and technical work",
+      "url": "/#projects"
+    },
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "description": "Get in touch with Jorge for opportunities",
+      "url": "/#contact"
+    },
+    {
+      "name": "Resume",
+      "short_name": "Resume",
+      "description": "Download Jorge's resume",
+      "url": "https://drive.google.com/file/d/15HpCi03e9owKfG_lAFlZ4hfKb6sdzkOb/view?usp=sharing"
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "web",
+      "url": "https://github.com/jrodriguezdiazz",
+      "id": "github-profile"
+    },
+    {
+      "platform": "web",
+      "url": "https://www.linkedin.com/in/jrodriguezdiazz",
+      "id": "linkedin-profile"
+    }
+  ],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "protocol_handlers": [
+    {
+      "protocol": "mailto",
+      "url": "/#contact?email=%s"
+    }
+  ],
+  "id": "jorge-rodriguez-portfolio",
+  "dir": "ltr"
+}

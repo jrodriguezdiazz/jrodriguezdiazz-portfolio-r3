@@ -1,148 +1,133 @@
-import { Button } from "@/components/ui/button"
-import { Github, Linkedin, Mail, Twitter } from "lucide-react"
-import Link from "next/link"
-import ContactForm from "./components/contact-form"
-import ProjectCard from "./components/project-card"
-import TechStack from "./components/tech-stack"
+import { Suspense } from "react";
+import AboutMe from "./components/about-me";
+import ContactForm from "./components/contact-form";
+import NavBar from "./components/nav-bar";
+import ProjectCard from "./components/project-card";
+import TechStack from "./components/tech-stack";
+import WorkExperience from "./components/work-experience";
+
+// Loading components for better UX
+const SectionSkeleton = () => (
+  <div className="animate-pulse">
+    <div className="h-8 bg-gray-200 rounded w-1/3 mx-auto mb-8"></div>
+    <div className="space-y-4">
+      <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+      <div className="h-4 bg-gray-200 rounded w-1/2"></div>
+      <div className="h-4 bg-gray-200 rounded w-2/3"></div>
+    </div>
+  </div>
+);
+
+// Project data moved to a constant for better maintainability
+const PROJECTS = [
+  {
+    id: "ecommerce-platform",
+    title: "E-commerce Platform",
+    description: "A full-stack e-commerce platform built with Next.js, Prisma, and Stripe integration.",
+    image: "/placeholder.svg?height=400&width=600",
+    link: "https://github.com",
+    tags: ["Next.js", "Prisma", "Stripe"],
+  },
+  {
+    id: "task-management-app",
+    title: "Task Management App",
+    description: "A real-time task management application with team collaboration features.",
+    image: "/placeholder.svg?height=400&width=600",
+    link: "https://github.com",
+    tags: ["React", "Node.js", "Socket.io"],
+  },
+  {
+    id: "ai-chat-interface",
+    title: "AI Chat Interface",
+    description: "An AI-powered chat interface with natural language processing capabilities.",
+    image: "/placeholder.svg?height=400&width=600",
+    link: "https://github.com",
+    tags: ["OpenAI", "Next.js", "TailwindCSS"],
+  },
+];
+
+// Section wrapper component for consistency
+const Section = ({ id, className = "", children }) => (
+  <section id={id} className={`py-16 ${className}`}>
+    <div className="container mx-auto px-4 md:px-6 max-w-7xl">
+      {children}
+    </div>
+  </section>
+);
+
+// Section header component for consistency
+const SectionHeader = ({ children, className = "" }) => (
+  <h2 className={`text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center ${className}`}>
+    {children}
+  </h2>
+);
 
 export default function Page() {
   return (
     <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-14 items-center">
-          <div className="mr-4 hidden md:flex">
-            <Link className="mr-6 flex items-center space-x-2" href="/">
-              <span className="hidden font-bold sm:inline-block">John.dev</span>
-            </Link>
-            <nav className="flex items-center space-x-6 text-sm font-medium">
-              <Link href="#about" className="transition-colors hover:text-foreground/80">
-                About Me 
-              </Link>
-              <Link href="#projects" className="transition-colors hover:text-foreground/80">
-                Projects
-              </Link>
-              <Link href="#tech-stack" className="transition-colors hover:text-foreground/80">
-                Tech Stack
-              </Link>
-              <Link href="#contact" className="transition-colors hover:text-foreground/80">
-                Contact
-              </Link>
-            </nav>
-          </div>
-          <Button variant="outline" className="ml-auto" >
-            <Link href="https://drive.google.com/file/d/15HpCi03e9owKfG_lAFlZ4hfKb6sdzkOb/view?usp=sharing" className="transition-colors hover:text-foreground/80">
-              Resume
-            </Link>
-          </Button>
-        </div>
-      </header>
+      <NavBar />
 
-      <main className="container px-4 md:px-6">
-        <section id="about" className="py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h1 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-3xl lg:text-6xl/none">
-                  Jorge Rodríguez Díaz
-                </h1>
-                <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-                  Building digital experiences with modern technologies. Focused on creating elegant solutions to
-                  complex problems.
-                </p>
-              </div>
-              <div className="space-x-4">
-                <Link href="https://github.com/jrodriguezdiazz" target="_blank">
-                  <Button variant="outline" size="icon">
-                    <Github className="h-4 w-4" />
-                    <span className="sr-only">GitHub</span>
-                  </Button>
-                </Link>
-                <Link href="https://www.linkedin.com/in/jrodriguezdiazz/" target="_blank">
-                  <Button variant="outline" size="icon">
-                    <Linkedin className="h-4 w-4" />
-                    <span className="sr-only">LinkedIn</span>
-                  </Button>
-                </Link>
-                <Link href="https://x.com/jrodriguezdiazz" target="_blank">
-                  <Button variant="outline" size="icon">
-                    <Twitter className="h-4 w-4" />
-                    <span className="sr-only">Twitter</span>
-                  </Button>
-                </Link>
-                <Link href="mailto:jrodriguezdiazz@outlook.com">
-                  <Button variant="outline" size="icon">
-                    <Mail className="h-4 w-4" />
-                    <span className="sr-only">Email</span>
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+      <main className="w-full">
+        {/* About Section */}
+        <Section id="about">
+          <Suspense fallback={<SectionSkeleton />}>
+            <AboutMe />
+          </Suspense>
+        </Section>
 
-        <section id="projects" className="py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center">Projects</h2>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              <ProjectCard
-                title="E-commerce Platform"
-                description="A full-stack e-commerce platform built with Next.js, Prisma, and Stripe integration."
-                image="/placeholder.svg?height=400&width=600"
-                link="https://github.com"
-                tags={["Next.js", "Prisma", "Stripe"]}
-              />
-              <ProjectCard
-                title="Task Management App"
-                description="A real-time task management application with team collaboration features."
-                image="/placeholder.svg?height=400&width=600"
-                link="https://github.com"
-                tags={["React", "Node.js", "Socket.io"]}
-              />
-              <ProjectCard
-                title="AI Chat Interface"
-                description="An AI-powered chat interface with natural language processing capabilities."
-                image="/placeholder.svg?height=400&width=600"
-                link="https://github.com"
-                tags={["OpenAI", "Next.js", "TailwindCSS"]}
-              />
-            </div>
-          </div>
-        </section>
+        {/* Work Experience Section */}
+        <Section id="work-experience" className="bg-gray-50/50 dark:bg-gray-900/50">
+          <SectionHeader>Work Experience</SectionHeader>
+          <Suspense fallback={<SectionSkeleton />}>
+            <WorkExperience />
+          </Suspense>
+        </Section>
 
-        <section id="tech-stack" className="py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center">
-              Tech Stack
-            </h2>
+        {/* Projects Section */}
+        <Section id="projects">
+          <SectionHeader>Projects</SectionHeader>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {PROJECTS.map((project) => (
+              <Suspense key={project.id} fallback={<SectionSkeleton />}>
+                <ProjectCard
+                  title={project.title}
+                  description={project.description}
+                  image={project.image}
+                  link={project.link}
+                  tags={project.tags}
+                />
+              </Suspense>
+            ))}
+          </div>
+        </Section>
+
+        {/* Tech Stack Section */}
+        <Section id="tech-stack" className="bg-gray-50/50 dark:bg-gray-900/50">
+          <SectionHeader>Tech Stack</SectionHeader>
+          <Suspense fallback={<SectionSkeleton />}>
             <TechStack />
-          </div>
-        </section>
+          </Suspense>
+        </Section>
 
-        <section id="contact" className="py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
-            <div className="mx-auto max-w-2xl">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center">
-                Get in Touch
-              </h2>
+        {/* Contact Section */}
+        <Section id="contact">
+          <div className="mx-auto max-w-1xl">
+            <SectionHeader>Get in Touch</SectionHeader>
+            <Suspense fallback={<SectionSkeleton />}>
               <ContactForm />
-            </div>
+            </Suspense>
           </div>
-        </section>
+        </Section>
       </main>
 
-      <footer className="border-t">
-        <div className="container flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6">
-          <p className="text-xs text-gray-500 dark:text-gray-400">© 2025 jrodriguezdiazz.dev. All rights reserved.</p>
-          <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-            <Link className="text-xs hover:underline underline-offset-4" href="#">
-              Terms of Service
-            </Link>
-            <Link className="text-xs hover:underline underline-offset-4" href="#">
-              Privacy
-            </Link>
-          </nav>
+      {/* Footer */}
+      <footer className="border-t bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm">
+        <div className="container mx-auto flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 max-w-7xl">
+          <p className="text-xs text-gray-500 dark:text-gray-400">
+            © {new Date().getFullYear()} jrodriguezdiazz.vercel.app. All rights reserved.
+          </p>
         </div>
       </footer>
     </div>
-  )
+  );
 }
