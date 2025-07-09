@@ -1,19 +1,16 @@
 "use client";
 
-import * as React from "react";
 import { Badge } from "@/components/ui/badge";
+import { ExternalLink } from "lucide-react";
+import Link from "next/link";
+import * as React from "react";
 
 interface WorkExperienceEntry {
   company: string;
-  position: string;
-  startDate: string;
-  endDate: string;
-  responsibilities: string[];
-  technologies: string[];
-}
-
-interface WorkExperienceEntry {
-  company: string;
+  companyLink: string;
+  client: string;
+  clientLink: string;
+  modality: string;
   position: string;
   startDate: string;
   endDate: string;
@@ -24,90 +21,81 @@ interface WorkExperienceEntry {
 const experiences: WorkExperienceEntry[] = [
   {
     company: "EPAM Systems",
+    client: "Dow Jones",
+    clientLink: "https://www.dowjones.com",
+    companyLink: "https://www.epam.com",
+    modality: "Remote",
     position: "Senior Software Engineer",
     startDate: "May 2022",
     endDate: "Present",
     responsibilities: [
-      "Architected and delivered a modular, API-first integration layer for Dow Jones ad configurations, designing REST & GraphQL endpoints to map CMS metadata to GAM hierarchies with 99.8% accuracy",
-      "Built a dynamic configuration management engine (template inheritance, versioned change control) with a Next.js/React admin UI, achieving 100% traceability and cutting deployment time by 45%",
-      "Collaborated with AdOps, RevOps & Product teams to define requirements, integrate the ACE widget, and profile GraphQL resolvers—reducing 95th-percentile API latency from 350ms to 120ms",
-      "Owned CI/CD: authored Terraform modules for AWS (API Gateway, Lambda, ElastiCache), configured GitHub Actions workflows (lint, Jest tests), and set up CloudWatch alerts to maintain 99.9% uptime",
-      "Mentored 3 junior engineers in API design, test-driven development (Jest & React Testing Library) and Kubernetes best practices"
-    ],
-    technologies: [
-      "Node.js", "Express.js", "GraphQL", "React", "Next.js",
-      "MongoDB", "Redis", "AWS (Lambda, API Gateway, ElastiCache)",
-      "Terraform", "Jest", "GitHub Actions", "Apollo Engine"
-    ]
+      "Architected & delivered a modular, API-first integration layer for Dow Jones ad configurations, leveraging Node.js, Express.js and GraphQL. Designed REST and GraphQL endpoints to pull CMS metadata and map it to GAM ad‐unit hierarchies ensuring 99.8% data-mapping accuracy between legacy CMS structures and Google Ad Manager.",
+      "Built a dynamic configuration management engine with a Next.js/React admin UI and a Node.js backend, using MongoDB for persisting templates and Redis for caching active configurations. Introduced template inheritance (allowing bulk updates via parent templates) and versioned change control (audit history, approvals, roll-back), which enabled 100% traceability of all ad-config changes, accelerated deployment velocity by 45%, and automatically detected & flagged 85% of configuration anomalies before reaching production. ",
+      "Collaborated cross-functionally with AdOps, RevOps, and Product teams to refine requirements, roadmap new features (e.g. ACE widget integration for in-page editing), and conduct performance tuning—profiling slow GraphQL resolvers with Apollo Engine and optimizing hot paths to reduce 95th-percentile API latency from 350 ms to 120 ms."],
+    technologies: ["JavaScript", "React", "Next.js", "Node.js", "Express.js", "HTML", "GraphQL", "AWS", "MongoDB", "Redis", "Jest", "Jira", "Google Ads "]
   },
   {
     company: "Newtech S.R.L.",
+    client: "Verizon",
+    companyLink: "https://www.newtechsa.com/es/inicio",
+    clientLink: "https://www.verizon.com",
+    modality: "Remote",
     position: "Software Developer",
     startDate: "Aug 2021",
     endDate: "May 2022",
-    responsibilities: [
-      "Revamped Verizon’s fault-reporting SPA in Angular 11+ (AOT, OnPush, lazy modules), shrinking initial bundle by 25% and boosting load times by 18%",
-      "Applied the DRY principle to eliminate over 2,000 lines of redundant TypeScript, reducing technical debt and cutting regression defects by 30%",
-      "Integrated Angular HttpClient with Verizon’s REST APIs and centralized error/retry logic using RxJS operators (retry, catchError)",
-      "Built and maintained an 85%-coverage test suite with Jasmine, Karma & Protractor, using HttpTestingController for isolated flow testing",
-      "Worked in Agile/SCRUM (Jira, Confluence), defining acceptance criteria and automating deployments via Jenkins pipelines"
-    ],
-    technologies: [
-      "Angular 11+", "TypeScript", "RxJS", "Sass",
-      "Angular CLI", "Jasmine", "Karma", "Protractor",
-      "HttpClient", "REST", "Jira", "Jenkins"
-    ]
+    responsibilities: ["Revamped Verizon’s fault-reporting single-page application using Angular 11+, enabling Ahead-Of-Time (AOT) compilation, OnPush change detection, and lazy-loaded feature modules. These optimizations shrank the initial bundle by 25% and improved end-to-end load times by 18%.",
+
+      "Eliminated over 2,000 lines of redundant TypeScript across shared services and components by enforcing the DRY principle, which reduced technical debt and cut regression defects by 30%.",
+
+      "Built a comprehensive test suite with Jasmine, Karma and Protractor, achieving 85% code coverage. Employed HttpTestingController to mock backend responses and validate critical user flows without live services.",
+
+      "Operated within an Agile/SCRUM environment using Jira for backlog management and Confluence for documentation. Collaborated closely with product owners and QA to define acceptance criteria, refine user stories and coordinate deployments through Jenkins pipelines. ",],
+    technologies: ["TypeScript", "Angular", "Angular CLI", "RxJS", "Node.js", "HTML", "CSS", "Jasmine", "GitLab", "Jenkins"]
   },
   {
     company: "IntelliSys D. Corp.",
+    client: "Escuela Nacional de la Judicatura",
+    companyLink: "https://intellisysdcorp.com/",
+    clientLink: "https://juriteca.edu.do/base/domenj",
+    modality: "On Site",
     position: "Software Engineer",
     startDate: "Nov 2020",
     endDate: "Aug 2021",
-    responsibilities: [
-      "Mentored 4 junior front-end engineers through pair-programming, code reviews and workshops on ES6+, React & Jest, boosting team delivery rate by 25%",
-      "Architected and delivered a virtual library of Dominican jurisprudence with React/Next.js, Elasticsearch full-text search and faceted filters—improving satisfaction by 13%",
-      "Built a Node.js/Express backend with PostgreSQL, optimized search indexing & queries to reduce latency by 40%",
-      "Defined CI/CD with GitHub Actions and Docker, deploying to AWS Elastic Beanstalk with zero-downtime releases",
-      "Collaborated with UX, legal researchers & QA, writing technical docs and onboarding guides in Confluence"
-    ],
-    technologies: [
-      "React", "Next.js", "Node.js", "Express.js",
-      "PostgreSQL", "Elasticsearch", "Docker",
-      "GitHub Actions", "Jest", "Confluence"
-    ]
-  },
-  {
-    company: "Consejo Nacional de Competitividad (CNC)",
-    position: "Software Developer",
-    startDate: "Jul 2020",
-    endDate: "Oct 2020",
-    responsibilities: [
-      "Designed and implemented interactive D3.js dashboards (line, bar, stacked area, maps) for visualizing national competitiveness data",
-      "Orchestrated AJAX data fetches with jQuery and built responsive UIs with HTML5 & CSS3 (Flexbox, Media Queries)",
-      "Optimized SVG rendering via virtualization and selective DOM updates, cutting initial load time by 45%",
-      "Ran A/B tests and iterated on UX prototypes based on in-app feedback, lifting user satisfaction by 31%"
-    ],
-    technologies: [
-      "D3.js", "JavaScript (ES6+)", "jQuery",
-      "HTML5", "CSS3", "SVG Performance Tuning"
-    ]
+    responsibilities: ["Mentored & upskilled four junior front-end engineers, conducting weekly one-on-one coaching sessions, pair-programming workshops and structured code reviews. Introduced best practices in JavaScript (ES6+), React, Git and unit testing (Jest, React Testing Library), boosting the team’s average story-completion rate by 25%.",
+
+      "Architected and delivered a virtual library of Dominican jurisprudence for academic and legal professionals, collaborating with subject-matter experts to model case metadata and hierarchy. Built a React/Next.js front-end with full-text search and faceted filters, backed by a Node.js/Express API and PostgreSQL datastore. Optimized indexing and query performance—reducing search latency by 40%—and enhanced the legal consultation experience by 13%, as measured in user-satisfaction surveys.",
+
+      "Collaborated cross-functionally with UX designers, legal researchers and QA analysts—gathering requirements, refining user stories in Jira, and authoring technical and user documentation in Confluence to streamline onboarding and maintenance."],
+    technologies: ["JavaScript", "Node.js", "Express.js", "HTML", "CSS", "Sass", "SQL"]
   },
   {
     company: "IntelliSys D. Corp.",
+    companyLink: "https://intellisysdcorp.com/",
+    client: "Consejo Nacional de Competitividad (CNC)",
+    clientLink: "https://cnc.gob.do",
+    modality: "On Site",
+    position: "Software Developer",
+    startDate: "Jul 2020",
+    endDate: "Oct 2020",
+    responsibilities: ["Designed and implemented interactive dashboards with D3.js, creating line charts, bar charts, and map graphs that let users explore historical trends, apply category filters, and hover for exact values.",
+
+      "Built a fully responsive UI with HTML5 and CSS3 (Flexbox, Media Queries), ensuring cross-browser compatibility and seamless layouts on desktop, tablet, and mobile. Established a modular design system for reusable chart components and info panels.",
+
+      "Collaborated closely with storytellers and UX designers, running A/B tests and iterating on prototypes based on in-app feedback and usage metrics—resulting in a 31% lift in user satisfaction as measured by post-interact surveys."],
+    technologies: ["JavaScript", "D3.js", "jQuery", "HTML", "CSS"]
+  },
+  {
+    company: "IntelliSys D. Corp.",
+    client: "IntelliSys D. Corp.",
+    companyLink: "https://intellisysdcorp.com/",
+    clientLink: "https://intellisysdcorp.com/",
+    modality: "On Site",
     position: "Software Engineer",
     startDate: "Apr 2019",
     endDate: "Jun 2020",
-    responsibilities: [
-      "Streamlined data collection via Node.js microservices on GCP (Cloud Functions, Pub/Sub, Cloud SQL), ingesting & normalizing CSV/Spreadsheet data to BigQuery",
-      "Built an admin web app in React & Redux with Node.js/Express backend, featuring dynamic data grids, filter/search controls and optimistic updates",
-      "Implemented JWT auth, centralized logging with Stackdriver, and automated deployments with Cloud Build & Terraform",
-      "Containerized services with Docker and deployed to GKE, reducing manual data prep time by 40% and improving admin efficiency by 15%"
-    ],
-    technologies: [
-      "Node.js", "Express.js", "React", "Redux",
-      "GCP (Cloud Functions, Pub/Sub, Cloud SQL, BigQuery, GKE)",
-      "Docker", "Terraform", "JWT", "Stackdriver"
-    ]
+    responsibilities: ["Streamlined internal data collection pipeline by architecting and deploying Node.js microservices on Google Cloud Platform (Cloud Functions, and Cloud SQL). Each service ingested, validated and normalized employee and project metrics from multiple sources (CSV uploads, Google Spreadsheets, APIs), then wrote consolidated records into PostgreSQL for analytics.",
+      "Built an administrative web application using React, Redux, Node.js/Express, HTML5 and Material UI, and Axios for REST API integration. Designed dynamic data grids, search/filter controls and editable forms for employee records, incorporating client-side validation and optimistic UI updates."],
+    technologies: ["JavaScript", "React", "Material-UI", "Node.js", "Express.js", "HTML", "CSS", "Python", "Flask", "GCP", "PostgreSQL", "Looker"]
   }
 ];
 
@@ -119,12 +107,37 @@ export default function WorkExperience() {
         <div key={ index } className="border rounded-lg p-6 space-y-4">
           <div className="flex justify-between items-start">
             <div>
-              <h3 className="text-xl font-semibold">{ experience.company }</h3>
-              <p className="text-lg text-muted-foreground">{ experience.position }</p>
+              <h2
+                className="text-xl font-semibold flex items-center"
+              >
+                { experience.company }
+                <span
+                  className={ "ml-2 text-muted-foreground text-sm" }
+                  children={ <Link
+                    href={ experience.companyLink } target="_blank" rel="noopener noreferrer"
+                    className="hover:underline">
+                    <ExternalLink className="h-4 w-4" />
+                  </Link> }
+                />
+              </h2>
+              <h3
+                className="text-xl font-semibold flex items-center"
+              >
+                { experience.client }
+                <span
+                  className={ "ml-2 text-muted-foreground text-sm" }
+                  children={ <Link
+                    href={ experience.clientLink } target="_blank" rel="noopener noreferrer"
+                    className="hover:underline">
+                    <ExternalLink className="h-4 w-4" />
+                  </Link> }
+                />
+              </h3>
+              <h4 className="text-lg text-muted-foreground">{ experience.modality } | { experience.position }</h4>
             </div>
-            <p className="text-sm text-muted-foreground">
+            <h4 className="text-sm text-muted-foreground">
               { experience.startDate } - { experience.endDate }
-            </p>
+            </h4>
           </div>
           <ul className="list-disc list-inside space-y-2">
             { experience.responsibilities.map((responsibility, idx) => (
