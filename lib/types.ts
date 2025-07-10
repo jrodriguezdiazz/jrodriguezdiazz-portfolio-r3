@@ -1,5 +1,7 @@
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 
+import * as React from "react";
+
 export interface UseGtagConsentOptions {
   /**
    * Whether to accept or decline the consent.
@@ -183,4 +185,56 @@ interface ConsentParams {
   security_storage?: "granted" | "denied";
   wait_for_update?: number;
   region?: string[];
+}
+
+export interface WorkExperienceEntry {
+  company: string;
+  companyLink: string;
+  client: string;
+  clientLink: string;
+  modality: string;
+  position: string;
+  startDate: string;
+  endDate: string;
+  responsibilities: string[];
+  technologies: string[];
+}
+
+export type ProficiencyLevel =
+  | "beginner"
+  | "intermediate"
+  | "advanced"
+  | "expert";
+
+export interface TechnologySkill {
+  name: string;
+  icon: React.ComponentType<{ className?: string }>;
+  proficiency: ProficiencyLevel;
+  yearsOfExperience: number;
+  isCore?: boolean;
+  color?: string;
+}
+
+export interface TechnologyCategory {
+  category: string;
+  categoryIcon: React.ComponentType<{ className?: string }>;
+  skills: TechnologySkill[];
+  description: string;
+}
+
+export interface ProficiencyIndicatorProps {
+  proficiency: ProficiencyLevel;
+  years: number;
+}
+
+export interface TechStackStatsProps {
+  technologies: TechnologyCategory[];
+}
+
+export interface CategoryCardProps {
+  category: TechnologyCategory;
+}
+
+export interface SkillBadgeProps {
+  skill: TechnologySkill;
 }

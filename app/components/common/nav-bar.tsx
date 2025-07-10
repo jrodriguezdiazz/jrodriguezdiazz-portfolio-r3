@@ -1,31 +1,15 @@
 "use client";
-import {
-  Menu,
-  X,
-  Download,
-  User,
-  Briefcase,
-  Code2,
-  Layers,
-  Mail,
-} from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
+import { NAV_ITEMS } from "@/lib/constants";
 import { event } from "@/lib/gtag";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const navItems = [
-    { href: "#about", label: "About Me", icon: User },
-    { href: "#work-experience", label: "Experience", icon: Briefcase },
-    { href: "#projects", label: "Projects", icon: Code2 },
-    { href: "#tech-stack", label: "Tech Stack", icon: Layers },
-    { href: "#contact", label: "Contact", icon: Mail },
-  ];
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -41,7 +25,7 @@ export default function NavBar() {
       <div className='container mx-auto px-4 flex h-16 items-center justify-between'>
         {/* Logo/Brand */}
         <div className='flex items-center'>
-          <Link href='/#' className='flex items-center space-x-3 group'>
+          <Link href='/public#' className='flex items-center space-x-3 group'>
             <div className='w-8 h-8 rounded-full flex items-center justify-center'>
               <span className='font-bold text-sm'>JRD</span>
             </div>
@@ -53,7 +37,7 @@ export default function NavBar() {
 
         {/* Desktop Navigation */}
         <nav className='hidden md:flex items-center space-x-1'>
-          {navItems.map(item => {
+          {NAV_ITEMS.map(item => {
             const Icon = item.icon;
             return (
               <Link
@@ -111,7 +95,7 @@ export default function NavBar() {
       {isMenuOpen && (
         <div className='md:hidden absolute top-full left-0 right-0 bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg border-b border-gray-200 dark:border-gray-800 shadow-lg'>
           <nav className='container mx-auto px-4 py-4 space-y-2'>
-            {navItems.map(item => {
+            {NAV_ITEMS.map(item => {
               const Icon = item.icon;
               return (
                 <Link

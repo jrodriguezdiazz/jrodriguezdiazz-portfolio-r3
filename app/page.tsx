@@ -1,28 +1,15 @@
 import { Suspense } from "react";
 
-import AboutMe from "./components/about-me";
-import ContactForm from "./components/contact-form";
-import NavBar from "./components/nav-bar";
-import TechStack from "./components/tech-stack";
-import WorkExperience from "./components/work-experience";
-import SectionSkeleton from "./components/section-skeleton";
-import Projects from "./components/projects";
+import AboutMe from "./components/about-me/about-me";
+import NavBar from "./components/common/nav-bar";
+import SectionSkeleton from "./components/common/section-skeleton";
+import ContactForm from "./components/contact/contact-form";
+import WorkExperience from "./components/exprience/work-experience";
+import Projects from "./components/projects/projects";
+import TechStack from "./components/tech-stack/tech-stack";
 
-// Section wrapper component for consistency
-const Section = ({ id, className = "", children }) => (
-  <section id={id} className={`py-16 ${className}`}>
-    <div className='container mx-auto px-4 md:px-6 max-w-7xl'>{children}</div>
-  </section>
-);
-
-// Section header component for consistency
-const SectionHeader = ({ children, className = "" }) => (
-  <h2
-    className={`text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center ${className}`}
-  >
-    {children}
-  </h2>
-);
+import { Section, SectionHeader } from "@/app/components/common/section";
+import Footer from "@/app/components/common/footer";
 
 export default function Page() {
   return (
@@ -74,16 +61,7 @@ export default function Page() {
           </div>
         </Section>
       </main>
-
-      {/* Footer */}
-      <footer className='border-t bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm'>
-        <div className='container mx-auto flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 max-w-7xl'>
-          <p className='text-xs text-gray-500 dark:text-gray-400'>
-            © {new Date().getFullYear()} jrodriguezdiazz.vercel.app. All rights
-            reserved.
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

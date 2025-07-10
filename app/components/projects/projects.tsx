@@ -1,21 +1,23 @@
+import * as React from "react";
 import { Suspense, useMemo } from "react";
-import {
-  SiReactos,
-  SiFirebase,
-  SiExpo,
-  SiPython,
-  SiTelegram,
-  SiNodedotjs,
-  SiAngular,
-  SiReact,
-  SiMui,
-  SiTypescript,
-  SiGoogle,
-} from "react-icons/si";
 import { DiMsqlServer } from "react-icons/di";
+import {
+  SiAngular,
+  SiExpo,
+  SiFirebase,
+  SiGoogle,
+  SiMui,
+  SiNodedotjs,
+  SiPython,
+  SiReact,
+  SiReactos,
+  SiTelegram,
+  SiTypescript,
+} from "react-icons/si";
+
+import SectionSkeleton from "../common/section-skeleton";
 
 import ProjectCard from "./project-card";
-import SectionSkeleton from "./section-skeleton";
 
 // Updated project data with your actual projects
 const PROJECTS = [
@@ -120,7 +122,12 @@ export default function Projects({
   }
 
   return (
-    <section className='w-full' aria-labelledby='projects-heading'>
+    <section className='space-y-6' aria-labelledby='projects-heading'>
+      <div className='text-center space-y-2'>
+        <p className='text-muted-foreground'>
+          My technical skills and expertise across different domains
+        </p>
+      </div>
       <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr'>
         {processedProjects.map(project => (
           <Suspense
