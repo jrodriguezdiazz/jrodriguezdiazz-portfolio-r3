@@ -44,7 +44,7 @@ export default function ProjectCard({
             return (
               <span
                 key={index}
-                className='inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800'
+                className='inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800 hover:bg-primary/20'
               >
                 <IconComponent size={14} style={{ color: tag.color }} />
                 {tag.name}

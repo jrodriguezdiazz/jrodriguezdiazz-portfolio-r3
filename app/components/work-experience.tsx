@@ -51,43 +51,46 @@ interface WorkExperienceEntry {
 
 const TECH_ICONS: Record<
   string,
-  React.ComponentType<{ className?: string }>
+  { icon: React.ComponentType<{ className?: string }>; color: string }
 > = {
-  React: FaReact,
-  "Next.js": FaReact,
-  "Node.js": FaNodeJs,
-  "Express.js": SiExpress,
-  HTML: FaHtml5,
-  GraphQL: SiGraphql,
-  AWS: FaAws,
-  MongoDB: SiMongodb,
-  Redis: SiRedis,
-  Jest: SiJest,
-  Jira: SiJira,
-  "Google Ads": SiGoogleads,
-  TypeScript: SiTypescript,
-  JavaScript: SiJavascript,
-  Angular: SiAngular,
-  "Angular CLI": SiAngular,
-  RxJS: SiReactivex,
-  CSS: FaCss3,
-  GitLab: SiGitlab,
-  Jenkins: SiJenkins,
-  Sass: FaSass,
-  SQL: SiPostgresql,
-  "D3.js": SiD3Dotjs,
-  jQuery: SiJquery,
-  Python: FaPython,
-  Flask: FaPython,
-  GCP: SiGooglecloud,
-  PostgreSQL: SiPostgresql,
-  Looker: SiLooker,
-  "Material-UI": SiMui,
+  React: { icon: FaReact, color: "#61DAFB" },
+  "Next.js": { icon: FaReact, color: "#000000" },
+  "Node.js": { icon: FaNodeJs, color: "#339933" },
+  "Express.js": { icon: SiExpress, color: "#000000" },
+  HTML: { icon: FaHtml5, color: "#E34F26" },
+  GraphQL: { icon: SiGraphql, color: "#E10098" },
+  AWS: { icon: FaAws, color: "#FF9900" },
+  MongoDB: { icon: SiMongodb, color: "#47A248" },
+  Redis: { icon: SiRedis, color: "#DC382D" },
+  Jest: { icon: SiJest, color: "#C21325" },
+  Jira: { icon: SiJira, color: "#0052CC" },
+  "Google Ads": { icon: SiGoogleads, color: "#4285F4" },
+  TypeScript: { icon: SiTypescript, color: "#3178C6" },
+  JavaScript: { icon: SiJavascript, color: "#F7DF1E" },
+  Angular: { icon: SiAngular, color: "#DD0031" },
+  "Angular CLI": { icon: SiAngular, color: "#DD0031" },
+  RxJS: { icon: SiReactivex, color: "#B7178C" },
+  CSS: { icon: FaCss3, color: "#1572B6" },
+  GitLab: { icon: SiGitlab, color: "#FC6D26" },
+  Jenkins: { icon: SiJenkins, color: "#D33833" },
+  Sass: { icon: FaSass, color: "#CC6699" },
+  SQL: { icon: SiPostgresql, color: "#336791" },
+  "D3.js": { icon: SiD3Dotjs, color: "#F9A03C" },
+  jQuery: { icon: SiJquery, color: "#0769AD" },
+  Python: { icon: FaPython, color: "#3776AB" },
+  Flask: { icon: FaPython, color: "#000000" },
+  GCP: { icon: SiGooglecloud, color: "#4285F4" },
+  PostgreSQL: { icon: SiPostgresql, color: "#336791" },
+  Looker: { icon: SiLooker, color: "#4285F4" },
+  "Material-UI": { icon: SiMui, color: "#007FFF" },
 } as const;
 
 const getTechIcon = (
   tech: string
-): React.ComponentType<{ className?: string }> | null => {
+): {
+  icon: React.ComponentType<{ className?: string }>;
+  color: string;
+} | null => {
   return TECH_ICONS[tech] || null;
 };
 
@@ -262,11 +265,13 @@ interface TechBadgeProps {
 }
 
 const TechBadge: React.FC<TechBadgeProps> = ({ tech }) => {
-  const Icon = getTechIcon(tech);
+  const techData = getTechIcon(tech);
 
   return (
     <Badge className='flex items-center gap-1 bg-primary/10 text-primary hover:bg-primary/20 transition-colors'>
-      {Icon && <Icon className='h-3 w-3' />}
+      {techData && (
+        <techData.icon className='h-3 w-3' style={{ color: techData.color }} />
+      )}
       {tech}
     </Badge>
   );

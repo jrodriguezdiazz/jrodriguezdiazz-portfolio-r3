@@ -56,6 +56,7 @@ interface TechnologySkill {
   proficiency: ProficiencyLevel;
   yearsOfExperience: number;
   isCore?: boolean;
+  color?: string;
 }
 
 interface TechnologyCategory {
@@ -116,6 +117,7 @@ const technologies: TechnologyCategory[] = [
         proficiency: "expert",
         yearsOfExperience: 5,
         isCore: true,
+        color: "#61DAFB",
       },
       {
         name: "Next.js",
@@ -123,6 +125,7 @@ const technologies: TechnologyCategory[] = [
         proficiency: "advanced",
         yearsOfExperience: 3,
         isCore: true,
+        color: "#000000",
       },
       {
         name: "TypeScript",
@@ -130,6 +133,7 @@ const technologies: TechnologyCategory[] = [
         proficiency: "advanced",
         yearsOfExperience: 4,
         isCore: true,
+        color: "#3178C6",
       },
       {
         name: "JavaScript (ES6+)",
@@ -137,54 +141,63 @@ const technologies: TechnologyCategory[] = [
         proficiency: "expert",
         yearsOfExperience: 6,
         isCore: true,
+        color: "#F7DF1E",
       },
       {
         name: "HTML5",
         icon: SiHtml5,
         proficiency: "expert",
         yearsOfExperience: 6,
+        color: "#E34F26",
       },
       {
         name: "CSS3 / Sass",
         icon: SiCss3,
         proficiency: "advanced",
         yearsOfExperience: 5,
+        color: "#1572B6",
       },
       {
         name: "Tailwind CSS",
         icon: SiTailwindcss,
         proficiency: "advanced",
         yearsOfExperience: 2,
+        color: "#06B6D4",
       },
       {
         name: "Angular 11+",
         icon: SiAngular,
         proficiency: "advanced",
         yearsOfExperience: 3,
+        color: "#DD0031",
       },
       {
         name: "RxJS",
         icon: SiReactivex,
         proficiency: "intermediate",
         yearsOfExperience: 2,
+        color: "#B7178C",
       },
       {
         name: "Redux",
         icon: SiRedux,
         proficiency: "advanced",
         yearsOfExperience: 3,
+        color: "#764ABC",
       },
       {
         name: "D3.js",
         icon: SiD3Dotjs,
         proficiency: "intermediate",
         yearsOfExperience: 2,
+        color: "#F9A03C",
       },
       {
         name: "jQuery",
         icon: SiJquery,
         proficiency: "advanced",
         yearsOfExperience: 4,
+        color: "#0769AD",
       },
     ],
   },
@@ -199,6 +212,7 @@ const technologies: TechnologyCategory[] = [
         proficiency: "expert",
         yearsOfExperience: 5,
         isCore: true,
+        color: "#339933",
       },
       {
         name: "Express.js",
@@ -206,48 +220,56 @@ const technologies: TechnologyCategory[] = [
         proficiency: "advanced",
         yearsOfExperience: 4,
         isCore: true,
+        color: "#000000",
       },
       {
         name: "GraphQL",
         icon: SiGraphql,
         proficiency: "advanced",
         yearsOfExperience: 3,
+        color: "#E10098",
       },
       {
         name: "REST APIs",
         icon: SiGraphql,
         proficiency: "expert",
         yearsOfExperience: 5,
+        color: "#E10098",
       },
       {
         name: "PostgreSQL",
         icon: SiPostgresql,
         proficiency: "advanced",
         yearsOfExperience: 4,
+        color: "#336791",
       },
       {
         name: "MongoDB",
         icon: SiMongodb,
         proficiency: "advanced",
         yearsOfExperience: 3,
+        color: "#47A248",
       },
       {
         name: "Redis",
         icon: SiRedis,
         proficiency: "intermediate",
-        yearsOfExperience: 2,
+        yearsOfExperience: 3,
+        color: "#DC382D",
       },
       {
         name: "SQL",
         icon: SiMysql,
         proficiency: "advanced",
         yearsOfExperience: 4,
+        color: "#4479A1",
       },
       {
         name: "Python / Flask",
         icon: SiPython,
         proficiency: "intermediate",
         yearsOfExperience: 2,
+        color: "#3776AB",
       },
     ],
   },
@@ -261,6 +283,7 @@ const technologies: TechnologyCategory[] = [
         icon: SiDocker,
         proficiency: "intermediate",
         yearsOfExperience: 2,
+        color: "#2496ED",
       },
       {
         name: "AWS",
@@ -268,31 +291,42 @@ const technologies: TechnologyCategory[] = [
         proficiency: "advanced",
         yearsOfExperience: 3,
         isCore: true,
+        color: "#FF9900",
       },
       {
         name: "Google Cloud",
         icon: SiGooglecloud,
         proficiency: "intermediate",
         yearsOfExperience: 2,
+        color: "#4285F4",
       },
       {
         name: "CI/CD",
         icon: SiGithub,
         proficiency: "advanced",
         yearsOfExperience: 3,
+        color: "#181717",
       },
-      { name: "Git", icon: SiGit, proficiency: "expert", yearsOfExperience: 6 },
+      {
+        name: "Git",
+        icon: SiGit,
+        proficiency: "expert",
+        yearsOfExperience: 6,
+        color: "#F05032",
+      },
       {
         name: "Linux",
         icon: SiLinux,
         proficiency: "intermediate",
         yearsOfExperience: 3,
+        color: "#FCC624",
       },
       {
         name: "Nginx",
         icon: SiNginx,
         proficiency: "intermediate",
         yearsOfExperience: 2,
+        color: "#009639",
       },
     ],
   },
@@ -306,48 +340,56 @@ const technologies: TechnologyCategory[] = [
         icon: VscCode,
         proficiency: "expert",
         yearsOfExperience: 5,
+        color: "#007ACC",
       },
       {
         name: "Webpack",
         icon: SiWebpack,
         proficiency: "intermediate",
         yearsOfExperience: 3,
+        color: "#8DD6F9",
       },
       {
         name: "Vite",
         icon: SiVite,
         proficiency: "advanced",
         yearsOfExperience: 2,
+        color: "#646CFF",
       },
       {
         name: "Jest",
         icon: SiJest,
         proficiency: "advanced",
         yearsOfExperience: 3,
+        color: "#C21325",
       },
       {
         name: "GitHub",
         icon: SiGithub,
         proficiency: "expert",
         yearsOfExperience: 6,
+        color: "#181717",
       },
       {
         name: "Postman",
         icon: SiPostman,
         proficiency: "advanced",
         yearsOfExperience: 4,
+        color: "#FF6C37",
       },
       {
         name: "Figma",
         icon: SiFigma,
         proficiency: "intermediate",
         yearsOfExperience: 2,
+        color: "#F24E1E",
       },
       {
         name: "Vercel",
         icon: SiVercel,
         proficiency: "advanced",
         yearsOfExperience: 2,
+        color: "#000000",
       },
     ],
   },
@@ -408,7 +450,10 @@ const SkillBadge: React.FC<SkillBadgeProps> = ({ skill }) => {
     `}
     >
       <div className='flex items-center gap-2'>
-        <skill.icon className='w-5 h-5 text-foreground' />
+        <skill.icon
+          className='w-5 h-5'
+          style={{ color: skill.color || "currentColor" }}
+        />
         <span className='font-medium text-sm text-foreground'>
           {skill.name}
         </span>

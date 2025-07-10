@@ -1,86 +1,82 @@
 import { Suspense, useMemo } from "react";
 import {
-  SiNextdotjs,
-  SiPrisma,
-  SiStripe,
-  SiTypescript,
-  SiReact,
+  SiReactos,
+  SiFirebase,
+  SiExpo,
+  SiPython,
+  SiTelegram,
   SiNodedotjs,
-  SiSocketdotio,
-  SiMongodb,
-  SiOpenai,
-  SiTailwindcss,
-  SiVercel,
-  SiD3Dotjs,
-  SiFastapi,
-  SiPostgresql,
+  SiAngular,
+  SiReact,
+  SiMui,
+  SiTypescript,
+  SiGoogle,
 } from "react-icons/si";
+import { DiMsqlServer } from "react-icons/di";
 
 import ProjectCard from "./project-card";
 import SectionSkeleton from "./section-skeleton";
 
-// Project data with improved structure and more realistic examples
+// Updated project data with your actual projects
 const PROJECTS = [
   {
-    id: "ecommerce-platform",
-    title: "E-commerce Platform",
+    id: "flixo",
+    title: "Flixo",
     description:
-      "A full-stack e-commerce platform built with Next.js, Prisma, and Stripe integration for seamless online shopping experiences.",
-    image: "/placeholder.svg?height=400&width=600",
-    link: "https://github.com/username/ecommerce-platform",
+      "🤳🏾 Made to share your best moments and smiles with your friends.",
+    image: "/projects/flixo.png",
+    link: "https://github.com/jrodriguezdiazz/Flixo",
     tags: [
-      { name: "Next.js", icon: SiNextdotjs, color: "#000000" },
-      { name: "Prisma", icon: SiPrisma, color: "#2D3748" },
-      { name: "Stripe", icon: SiStripe, color: "#635BFF" },
-      { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+      { name: "React Native", icon: SiReactos, color: "#61DAFB" },
+      { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
+      { name: "Expo", icon: SiExpo, color: "#000020" },
     ],
     status: "live",
     featured: true,
   },
   {
-    id: "task-management-app",
-    title: "Task Management App",
+    id: "belphoebe",
+    title: "Belphoebe",
     description:
-      "A real-time collaborative task management application with team workspaces, deadline tracking, and progress analytics.",
-    image: "/placeholder.svg?height=400&width=600",
-    link: "https://github.com/username/task-manager",
+      "Belphoebe is the virtual assistant of LICEM-Retro, her goal is to help you rent films on our platform, where you will find a great diversity of films 💁🏻‍♀️",
+    image: "/projects/belphoebe.png",
+    link: "https://t.me/BelphoebeBot",
     tags: [
-      { name: "React", icon: SiReact, color: "#61DAFB" },
+      { name: "Python", icon: SiPython, color: "#3776AB" },
+      { name: "SQL Server", icon: DiMsqlServer, color: "#CC2927" },
+      { name: "Telegram API", icon: SiTelegram, color: "#26A5E4" },
+    ],
+    status: "live",
+    featured: true,
+  },
+  {
+    id: "school-administrator",
+    title: "School Administrator",
+    description:
+      "This platform is an example of a system that will allow managing students of a school",
+    image: "/projects/school-administrator.png",
+    link: "https://school-administrator-320621.web.app/",
+    tags: [
       { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
-      { name: "Socket.io", icon: SiSocketdotio, color: "#010101" },
-      { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+      { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
+      { name: "SQL Server", icon: DiMsqlServer, color: "#CC2927" },
+      { name: "Angular", icon: SiAngular, color: "#DD0031" },
     ],
     status: "live",
     featured: false,
   },
   {
-    id: "ai-chat-interface",
-    title: "AI Chat Interface",
+    id: "book-search-engine",
+    title: "Book Search Engine",
     description:
-      "An intelligent chat interface with natural language processing, conversation memory, and multi-modal capabilities.",
-    image: "/placeholder.svg?height=400&width=600",
-    link: "https://github.com/username/ai-chat",
-    tags: [
-      { name: "OpenAI", icon: SiOpenai, color: "#412991" },
-      { name: "Next.js", icon: SiNextdotjs, color: "#000000" },
-      { name: "TailwindCSS", icon: SiTailwindcss, color: "#06B6D4" },
-      { name: "Vercel AI SDK", icon: SiVercel, color: "#000000" },
-    ],
-    status: "development",
-    featured: true,
-  },
-  {
-    id: "analytics-dashboard",
-    title: "Analytics Dashboard",
-    description:
-      "A comprehensive analytics dashboard with real-time data visualization, custom reporting, and team insights.",
-    image: "/placeholder.svg?height=400&width=600",
-    link: "https://github.com/username/analytics-dashboard",
+      "🔍 📚 An application that will allow users to search for books by entering a query (Title, Author, etc). Display the resulting books in a list on the page with all the corresponding data.",
+    image: "/projects/book-search-engine.png",
+    link: "https://book-search-engine-black.vercel.app",
     tags: [
       { name: "React", icon: SiReact, color: "#61DAFB" },
-      { name: "D3.js", icon: SiD3Dotjs, color: "#F9A03C" },
-      { name: "FastAPI", icon: SiFastapi, color: "#009688" },
-      { name: "PostgreSQL", icon: SiPostgresql, color: "#336791" },
+      { name: "Material-UI", icon: SiMui, color: "#007FFF" },
+      { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+      { name: "Google Books API", icon: SiGoogle, color: "#4285F4" },
     ],
     status: "live",
     featured: false,
