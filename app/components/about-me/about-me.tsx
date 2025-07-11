@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Twitter, Calendar, Code2 } from "lucide-react";
+import { Github, Linkedin, Mail, Calendar, Code2, Twitter } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -107,7 +107,7 @@ export default function AboutMe() {
               <Button
                 variant='outline'
                 size='lg'
-                className='bg-white/80 hover:bg-gray-50 dark:bg-gray-800/80 dark:hover:bg-gray-700 border-gray-300 dark:border-gray-600 transition-all duration-200 hover:shadow-lg hover:scale-105'
+                className='bg-white/80 hover:bg-gray-50 dark:bg-gray-800/80 dark:hover:bg-gray-700 border-gray-300 dark:border-gray-600 transition-all duration-200 hover:shadow-lg hover:scale-105 w-32 justify-center'
               >
                 <Github className='h-5 w-5 mr-2 group-hover:text-gray-800 dark:group-hover:text-white' />
                 GitHub
@@ -123,7 +123,7 @@ export default function AboutMe() {
               <Button
                 variant='outline'
                 size='lg'
-                className='bg-white/80 hover:bg-blue-50 dark:bg-gray-800/80 dark:hover:bg-blue-900/20 border-gray-300 dark:border-gray-600 transition-all duration-200 hover:shadow-lg hover:scale-105'
+                className='bg-white/80 hover:bg-blue-50 dark:bg-gray-800/80 dark:hover:bg-blue-900/20 border-gray-300 dark:border-gray-600 transition-all duration-200 hover:shadow-lg hover:scale-105 w-32 justify-center'
               >
                 <Linkedin className='h-5 w-5 mr-2 group-hover:text-blue-600 dark:group-hover:text-blue-400' />
                 LinkedIn
@@ -139,11 +139,11 @@ export default function AboutMe() {
               <Button
                 variant='outline'
                 size='lg'
-                className='bg-white/80 hover:bg-blue-50 dark:bg-gray-800/80 dark:hover:bg-blue-900/20 border-gray-300 dark:border-gray-600 transition-all duration-200 hover:shadow-lg hover:scale-105'
+                className='bg-white/80 hover:bg-blue-50 dark:bg-gray-800/80 dark:hover:bg-blue-900/20 border-gray-300 dark:border-gray-600 transition-all duration-200 hover:shadow-lg hover:scale-105 w-32 justify-center'
               >
                 <Twitter className='h-5 w-5 mr-2 group-hover:text-blue-500 dark:group-hover:text-blue-400' />
                 Twitter
-                <span className='sr-only'>Twitter Profile</span>
+                <span className='sr-only'>X Profile</span>
               </Button>
             </Link>
 
@@ -151,7 +151,7 @@ export default function AboutMe() {
               <Button
                 variant='outline'
                 size='lg'
-                className='bg-white/80 hover:bg-green-50 dark:bg-gray-800/80 dark:hover:bg-green-900/20 border-gray-300 dark:border-gray-600 transition-all duration-200 hover:shadow-lg hover:scale-105'
+                className='bg-white/80 hover:bg-green-50 dark:bg-gray-800/80 dark:hover:bg-green-900/20 border-gray-300 dark:border-gray-600 transition-all duration-200 hover:shadow-lg hover:scale-105 w-32 justify-center'
               >
                 <Mail className='h-5 w-5 mr-2 group-hover:text-green-600 dark:group-hover:text-green-400' />
                 Email

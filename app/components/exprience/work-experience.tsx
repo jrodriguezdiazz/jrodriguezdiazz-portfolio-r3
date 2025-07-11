@@ -4,6 +4,7 @@ import { ExternalLink, Calendar, MapPin, Building2, Users } from "lucide-react";
 import Link from "next/link";
 import * as React from "react";
 
+import { calculateDuration } from "@/lib/utils";
 import { WorkExperienceEntry } from "@/lib/types";
 import { EXPERIENCES, TECH_ICONS } from "@/lib/constants";
 import { Badge } from "@/components/ui/badge";
@@ -19,22 +20,6 @@ const getTechIcon = (
 
 const formatDateRange = (startDate: string, endDate: string): string => {
   return `${startDate} - ${endDate}`;
-};
-
-const calculateDuration = (startDate: string, endDate: string): string => {
-  const start = new Date(startDate);
-  const end = endDate === "Present" ? new Date() : new Date(endDate);
-
-  const diffTime = Math.abs(end.getTime() - start.getTime());
-  const diffMonths = Math.ceil(diffTime / (1000 * 60 * 60 * 24 * 30));
-
-  if (diffMonths < 12) {
-    return `${diffMonths} month${diffMonths > 1 ? "s" : ""}`;
-  } else {
-    const years = Math.floor(diffMonths / 12);
-    const months = diffMonths % 12;
-    return `${years} year${years > 1 ? "s" : ""}${months > 0 ? ` ${months} month${months > 1 ? "s" : ""}` : ""}`;
-  }
 };
 
 interface CompanyLinkProps {

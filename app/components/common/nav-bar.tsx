@@ -25,7 +25,7 @@ export default function NavBar() {
       <div className='container mx-auto px-4 flex h-16 items-center justify-between'>
         {/* Logo/Brand */}
         <div className='flex items-center'>
-          <Link href='/public#' className='flex items-center space-x-3 group'>
+          <Link href='/' className='flex items-center space-x-3 group'>
             <div className='w-8 h-8 rounded-full flex items-center justify-center'>
               <span className='font-bold text-sm'>JRD</span>
             </div>

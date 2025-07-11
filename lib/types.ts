@@ -238,3 +238,19 @@ export interface CategoryCardProps {
 export interface SkillBadgeProps {
   skill: TechnologySkill;
 }
+
+interface Tag {
+  name: string;
+  icon: React.ComponentType<{ size?: number; style?: React.CSSProperties }>;
+  color: string;
+}
+
+export interface ProjectCardProps {
+  title: string;
+  description: string;
+  image: string;
+  link?: string;
+  tags: Tag[];
+  status: "live" | "offline";
+  repo: string;
+}

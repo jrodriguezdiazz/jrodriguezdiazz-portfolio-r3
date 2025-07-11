@@ -27,6 +27,7 @@ import {
   SiDocker,
   SiExpress,
   SiFigma,
+  SiFlask,
   SiGit,
   SiGithub,
   SiGitlab,
@@ -34,6 +35,7 @@ import {
   SiGooglecloud,
   SiGraphql,
   SiHtml5,
+  SiJasmine,
   SiJavascript,
   SiJenkins,
   SiJest,
@@ -56,11 +58,21 @@ import {
   SiRedux,
   SiTailwindcss,
   SiTypescript,
+  SiUnity,
   SiVercel,
   SiVite,
   SiWebpack,
 } from "react-icons/si";
+import { TbBrandCSharp } from "react-icons/tb";
 import { VscCode } from "react-icons/vsc";
+import { DiMsqlServer } from "react-icons/di";
+import {
+  SiExpo,
+  SiFirebase,
+  SiGoogle,
+  SiReactos,
+  SiTelegram,
+} from "react-icons/si";
 
 import {
   ProficiencyLevel,
@@ -105,6 +117,7 @@ export const EXPERIENCES: WorkExperienceEntry[] = [
       "Jest",
       "Jira",
       "Google Ads",
+      "Jenkins",
     ],
   },
   {
@@ -234,11 +247,12 @@ export const TECH_ICONS: Record<
   "D3.js": { icon: SiD3Dotjs, color: "#F9A03C" },
   jQuery: { icon: SiJquery, color: "#0769AD" },
   Python: { icon: FaPython, color: "#3776AB" },
-  Flask: { icon: FaPython, color: "#000000" },
+  Flask: { icon: SiFlask, color: "#000000" },
   GCP: { icon: SiGooglecloud, color: "#4285F4" },
   PostgreSQL: { icon: SiPostgresql, color: "#336791" },
   Looker: { icon: SiLooker, color: "#4285F4" },
   "Material-UI": { icon: SiMui, color: "#007FFF" },
+  Jasmine: { icon: SiJasmine, color: "#8A4182" },
 } as const;
 
 export const PROFICIENCY_CONFIG: Record<
@@ -567,5 +581,101 @@ export const TECHNOLOGIES: TechnologyCategory[] = [
         color: "#000000",
       },
     ],
+  },
+];
+
+export const PROJECTS = [
+  {
+    id: "explorando-ando",
+    title: "Explorando Ando",
+    description:
+      "🌴 Explorando Ando is the web platform for travel lovers in the Dominican Republic🇩🇴",
+    image: "/projects/explorando-ando.png",
+    link: "https://github.com/jrodriguezdiazz/explorando-ando",
+    repo: "https://github.com/jrodriguezdiazz/explorando-ando",
+    tags: [{ name: "React", icon: SiReact, color: "#61DAFB" }],
+    status: "offline",
+    featured: true,
+  },
+  {
+    id: "Dragon-s-Quest",
+    title: "Dragon's-Quest",
+    description:
+      "Dragon's Quest is an exciting 2D platformer game that takes players on a thrilling adventure. Embark on a quest through vibrant pixelated worlds",
+    image: "/projects/dragon-quest.png",
+    link: "https://jrodriguezdiazz.itch.io/dragons-quest",
+    repo: "https://github.com/jrodriguezdiazz/Dragon-s-Quest",
+    tags: [
+      { name: "Unity", icon: SiUnity, color: "#000000" },
+      { name: "C#", icon: TbBrandCSharp, color: "#682876" },
+    ],
+    status: "live",
+    featured: true,
+  },
+  {
+    id: "flixo",
+    title: "Flixo",
+    description:
+      "🤳🏾 Made to share your best moments and smiles with your friends.",
+    image: "/projects/flixo.png",
+    link: "https://github.com/jrodriguezdiazz/Flixo",
+    repo: "https://github.com/jrodriguezdiazz/Flixo",
+    tags: [
+      { name: "React Native", icon: SiReactos, color: "#61DAFB" },
+      { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
+      { name: "Expo", icon: SiExpo, color: "#000020" },
+    ],
+    status: "offline",
+    featured: true,
+  },
+  {
+    id: "belphoebe",
+    title: "Belphoebe",
+    description:
+      "Belphoebe is the virtual assistant of LICEM-Retro, her goal is to help you rent films on our platform, where you will find a great diversity of films 💁🏻‍♀️",
+    image: "/projects/belphoebe.png",
+    link: "https://t.me/BelphoebeBot",
+    repo: "https://github.com/jrodriguezdiazz/Belphoebe",
+    tags: [
+      { name: "Python", icon: SiPython, color: "#3776AB" },
+      { name: "SQL Server", icon: DiMsqlServer, color: "#CC2927" },
+      { name: "Telegram API", icon: SiTelegram, color: "#26A5E4" },
+    ],
+    status: "offline",
+    featured: true,
+  },
+  {
+    id: "school-administrator",
+    title: "School Administrator",
+    description:
+      "This platform is an example of a system that will allow managing students of a school",
+    image: "/projects/school-administrator.png",
+    link: "https://school-administrator-320621.web.app/",
+    repo: "https://github.com/jrodriguezdiazz/school-administrator",
+    tags: [
+      { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
+      { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
+      { name: "SQL Server", icon: DiMsqlServer, color: "#CC2927" },
+      { name: "Angular", icon: SiAngular, color: "#DD0031" },
+    ],
+    status: "live",
+    featured: false,
+  },
+  {
+    id: "book-search-engine",
+    title: "Book Search Engine",
+    description:
+      "🔍 📚 An application that will allow users to search for books by entering a query (Title, Author, etc). Display the resulting books in a list on the page with all the corresponding data.",
+    image: "/projects/book-search-engine.png",
+    link: "https://book-search-engine-black.vercel.app",
+    repo: "https://github.com/jrodriguezdiazz/book-search-engine",
+    tags: [
+      { name: "React", icon: SiReact, color: "#61DAFB" },
+      { name: "Material-UI", icon: SiMui, color: "#007FFF" },
+      { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+      { name: "Google Books API", icon: SiGoogle, color: "#4285F4" },
+    ],
+    status: "live",
+    featured: false,
   },
 ];
