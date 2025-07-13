@@ -17,8 +17,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Jorge Rodríguez Díaz - Senior Software Engineer",
-    template: "%s | Jorge Rodríguez Díaz",
+    default: "Jorge Rodríguez - Senior Software Engineer",
+    template: "%s | Jorge Rodríguez",
   },
   description:
     "Senior Software Engineer portfolio showcasing projects and skills in React, Next.js, and modern web technologies",
@@ -30,16 +30,16 @@ export const metadata: Metadata = {
     "Frontend Development",
     "Full Stack Developer",
     "Portfolio",
-    "Jorge Rodríguez Díaz",
+    "Jorge Rodríguez",
   ],
   authors: [
     {
-      name: "Jorge Rodríguez Díaz",
+      name: "Jorge Rodríguez",
       url: "https://jrodriguezdiazz.vercel.app/",
     },
   ],
-  creator: "Jorge Rodríguez Díaz",
-  publisher: "Jorge Rodríguez Díaz",
+  creator: "Jorge Rodríguez",
+  publisher: "Jorge Rodríguez",
   formatDetection: {
     email: false,
     address: false,
@@ -50,17 +50,17 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Jorge Rodríguez Díaz - Senior Software Engineer",
+    title: "Jorge Rodríguez - Senior Software Engineer",
     description:
       "Senior Software Engineer portfolio showcasing projects and skills in React, Next.js, and modern web technologies",
     url: "https://jrodriguezdiazz.vercel.app/",
-    siteName: "Jorge Rodríguez Díaz Portfolio",
+    siteName: "Jorge Rodríguez Portfolio",
     images: [
       {
         url: "/profile-photo.jpeg",
         width: 1200,
         height: 630,
-        alt: "Jorge Rodríguez Díaz - Senior Software Engineer",
+        alt: "Jorge Rodríguez - Senior Software Engineer",
       },
     ],
     locale: "en_US",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jorge Rodríguez Díaz - Senior Software Engineer",
+    title: "Jorge Rodríguez - Senior Software Engineer",
     description:
       "Senior Software Engineer portfolio showcasing projects and skills in React, Next.js, and modern web technologies",
     images: ["/profile-photo.jpeg"],
@@ -110,7 +110,7 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang='en' suppressHydrationWarning className={inter.variable}>
-      <head title={"Jorge Rodríguez Díaz - Senior Software Engineer"}>
+      <head title={"Jorge Rodríguez - Senior Software Engineer"}>
         <link rel='icon' href='/favicon.ico' sizes='any' />
         <link rel='dns-prefetch' href='https://fonts.googleapis.com' />
         <link rel='dns-prefetch' href='https://fonts.gstatic.com' />
@@ -133,13 +133,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
         />
         <link rel='manifest' href='/manifest.json' />
         <meta name='theme-color' content='#ffffff' />
-        <meta
-          name='application-name'
-          content='Jorge Rodríguez Díaz Portfolio'
-        />
+        <meta name='application-name' content='Jorge Rodríguez Portfolio' />
         <meta
           name='apple-mobile-web-app-title'
-          content='Jorge Rodríguez Díaz Portfolio'
+          content='Jorge Rodríguez Portfolio'
         />
         <meta name='msapplication-TileColor' content='#000' />
         <meta name='msapplication-TileImage' content='/mstile-150x150.png' />
@@ -153,7 +150,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <meta name='color-scheme' content='light dark' />
         <meta name='referrer' content='no-referrer-when-downgrade' />
         <meta name='theme-color' content='#ffffff' />
-        <title>Jorge Rodríguez Díaz - Senior Software Engineer</title>
+        <title>Jorge Rodríguez - Senior Software Engineer</title>
       </head>
       <body
         className={cn(

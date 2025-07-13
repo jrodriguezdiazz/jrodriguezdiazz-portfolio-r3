@@ -95,7 +95,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
           </div>
         </div>
 
-        <div className='flex flex-col items-end text-right'>
+        <div className='flex flex-col items-start text-left md:items-end md:text-right'>
           <div className='flex items-center gap-1 text-sm text-muted-foreground'>
             <Calendar className='h-3 w-3' />
             <span>

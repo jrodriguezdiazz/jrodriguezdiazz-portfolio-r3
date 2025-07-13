@@ -22,6 +22,7 @@ import {
 import {
   SiAmazonwebservices,
   SiAngular,
+  SiBootstrap,
   SiCss3,
   SiD3Dotjs,
   SiDocker,
@@ -49,6 +50,7 @@ import {
   SiNextdotjs,
   SiNginx,
   SiNodedotjs,
+  SiPandas,
   SiPostgresql,
   SiPostman,
   SiPython,
@@ -56,23 +58,23 @@ import {
   SiReactivex,
   SiRedis,
   SiRedux,
+  SiScikitlearn,
+  SiStripe,
+  SiStyledcomponents,
   SiTailwindcss,
+  SiTestinglibrary,
   SiTypescript,
   SiUnity,
   SiVercel,
   SiVite,
   SiWebpack,
+  SiYarn,
 } from "react-icons/si";
 import { TbBrandCSharp } from "react-icons/tb";
 import { VscCode } from "react-icons/vsc";
 import { DiMsqlServer } from "react-icons/di";
-import {
-  SiExpo,
-  SiFirebase,
-  SiGoogle,
-  SiReactos,
-  SiTelegram,
-} from "react-icons/si";
+import { SiExpo, SiFirebase, SiGoogle, SiTelegram } from "react-icons/si";
+import { GiBearHead } from "react-icons/gi";
 
 import {
   ProficiencyLevel,
@@ -586,14 +588,63 @@ export const TECHNOLOGIES: TechnologyCategory[] = [
 
 export const PROJECTS = [
   {
+    id: "caribbean-cinemas",
+    title: "Cine Caribbean Cinemas",
+    description:
+      "🎞️ A modern web platform that revolutionizes the Caribbean cinema experience. 🍿",
+    image: "/projects/caribbean-cinemas.png",
+    link: "http://licemcinema.tech",
+    repo: "https://github.com/jrodriguezdiazz/cinema-licem",
+    tags: [
+      { name: "React", icon: SiReact, color: "#61DAFB" },
+      { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
+      { name: "MySQL", icon: SiMysql, color: "#4479A1" },
+      { name: "Docker", icon: SiDocker, color: "#2496ED" },
+      { name: "Material UI", icon: SiMui, color: "#007FFF" },
+      { name: "Zustand", icon: GiBearHead, color: "#FF6B35" },
+      { name: "AWS", icon: SiAmazonwebservices, color: "#FF9900" },
+      { name: "Stripe", icon: SiStripe, color: "#635BFF" },
+      { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
+      { name: "Figma", icon: SiFigma, color: "#f24e1e" },
+    ],
+    status: "offline",
+    featured: true,
+  },
+  {
+    id: "belphoebe",
+    title: "Belphoebe",
+    description:
+      "🤖 Belphoebe is the virtual assistant of LICEM-Retro, her goal is to help you rent films on our platform, where you will find a great diversity of films 💁🏻‍♀️",
+    image: "/projects/belphoebe.png",
+    link: "https://t.me/BelphoebeBot",
+    repo: "https://github.com/jrodriguezdiazz/Belphoebe",
+    tags: [
+      { name: "Python", icon: SiPython, color: "#3776AB" },
+      { name: "SQL Server", icon: DiMsqlServer, color: "#CC2927" },
+      { name: "Telegram API", icon: SiTelegram, color: "#26A5E4" },
+      { name: "Pandas", icon: SiPandas, color: "#150458" },
+      { name: "Sklearn", icon: SiScikitlearn, color: "#F7931E" },
+    ],
+    status: "offline",
+    featured: true,
+  },
+  {
     id: "explorando-ando",
     title: "Explorando Ando",
     description:
-      "🌴 Explorando Ando is the web platform for travel lovers in the Dominican Republic🇩🇴",
+      "🌴 Explorando Ando is the web platform for travel lovers in the Dominican Republic. 🇩🇴",
     image: "/projects/explorando-ando.png",
     link: "https://github.com/jrodriguezdiazz/explorando-ando",
     repo: "https://github.com/jrodriguezdiazz/explorando-ando",
-    tags: [{ name: "React", icon: SiReact, color: "#61DAFB" }],
+    tags: [
+      { name: "React", icon: SiReact, color: "#61DAFB" },
+      { name: "Emotion", icon: SiStyledcomponents, color: "#D26AC2" },
+      { name: "Bootstrap", icon: SiBootstrap, color: "#7952B3" },
+      { name: "Testing Library", icon: SiTestinglibrary, color: "#E33332" },
+      { name: "Express", icon: SiExpress, color: "#000000" },
+      { name: "PostgreSQL", icon: SiPostgresql, color: "#336791" },
+      { name: "Zustand", icon: GiBearHead, color: "#FF6B35" },
+    ],
     status: "offline",
     featured: true,
   },
@@ -601,7 +652,7 @@ export const PROJECTS = [
     id: "Dragon-s-Quest",
     title: "Dragon's-Quest",
     description:
-      "Dragon's Quest is an exciting 2D platformer game that takes players on a thrilling adventure. Embark on a quest through vibrant pixelated worlds",
+      "🎮 Dragon's Quest is an exciting 2D platformer game that takes players on a thrilling adventure. Embark on a quest through vibrant pixelated worlds. 🐲",
     image: "/projects/dragon-quest.png",
     link: "https://jrodriguezdiazz.itch.io/dragons-quest",
     repo: "https://github.com/jrodriguezdiazz/Dragon-s-Quest",
@@ -616,30 +667,16 @@ export const PROJECTS = [
     id: "flixo",
     title: "Flixo",
     description:
-      "🤳🏾 Made to share your best moments and smiles with your friends.",
+      "🤳🏾 Made to share your best moments and smiles with your friends. 🛜",
     image: "/projects/flixo.png",
     link: "https://github.com/jrodriguezdiazz/Flixo",
     repo: "https://github.com/jrodriguezdiazz/Flixo",
     tags: [
-      { name: "React Native", icon: SiReactos, color: "#61DAFB" },
+      { name: "React Native", icon: SiReact, color: "#61DAFB" },
       { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
       { name: "Expo", icon: SiExpo, color: "#000020" },
-    ],
-    status: "offline",
-    featured: true,
-  },
-  {
-    id: "belphoebe",
-    title: "Belphoebe",
-    description:
-      "Belphoebe is the virtual assistant of LICEM-Retro, her goal is to help you rent films on our platform, where you will find a great diversity of films 💁🏻‍♀️",
-    image: "/projects/belphoebe.png",
-    link: "https://t.me/BelphoebeBot",
-    repo: "https://github.com/jrodriguezdiazz/Belphoebe",
-    tags: [
-      { name: "Python", icon: SiPython, color: "#3776AB" },
-      { name: "SQL Server", icon: DiMsqlServer, color: "#CC2927" },
-      { name: "Telegram API", icon: SiTelegram, color: "#26A5E4" },
+      { name: "Yarn", icon: SiYarn, color: "#2C8EBB" },
+      { name: "Zustand", icon: GiBearHead, color: "#FF6B35" },
     ],
     status: "offline",
     featured: true,
@@ -648,7 +685,7 @@ export const PROJECTS = [
     id: "school-administrator",
     title: "School Administrator",
     description:
-      "This platform is an example of a system that will allow managing students of a school",
+      "🏫This platform is an example of a system that will allow managing students of a school. 📅",
     image: "/projects/school-administrator.png",
     link: "https://school-administrator-320621.web.app/",
     repo: "https://github.com/jrodriguezdiazz/school-administrator",
@@ -657,6 +694,8 @@ export const PROJECTS = [
       { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
       { name: "SQL Server", icon: DiMsqlServer, color: "#CC2927" },
       { name: "Angular", icon: SiAngular, color: "#DD0031" },
+      { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+      { name: "RxJs", icon: SiReactivex, color: "#B7178C" },
     ],
     status: "live",
     featured: false,
@@ -665,7 +704,7 @@ export const PROJECTS = [
     id: "book-search-engine",
     title: "Book Search Engine",
     description:
-      "🔍 📚 An application that will allow users to search for books by entering a query (Title, Author, etc). Display the resulting books in a list on the page with all the corresponding data.",
+      "🔍 An application that will allow users to search for books by entering a query (Title, Author, etc). Display the resulting books in a list on the page with all the corresponding data. 📚",
     image: "/projects/book-search-engine.png",
     link: "https://book-search-engine-black.vercel.app",
     repo: "https://github.com/jrodriguezdiazz/book-search-engine",
