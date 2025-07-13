@@ -91,7 +91,7 @@ export default function AboutMe() {
               Cloud
             </div>
             <div className='text-sm text-gray-600 dark:text-gray-400'>
-              Microservices, DevOps
+              Serveless, DevOps
             </div>
           </div>
         </div>

@@ -15,6 +15,9 @@ import {
 import * as React from "react";
 import { BsFileEarmarkSpreadsheet } from "react-icons/bs";
 import { DiMsqlServer } from "react-icons/di";
+import { GiBearFace } from "react-icons/gi";
+import { TbBrandCSharp } from "react-icons/tb";
+import { VscCode } from "react-icons/vsc";
 import {
   FaAws,
   FaCss3,
@@ -24,7 +27,6 @@ import {
   FaReact,
   FaSass,
 } from "react-icons/fa";
-import { GiBearHead } from "react-icons/gi";
 import {
   SiAmazonwebservices,
   SiAngular,
@@ -83,10 +85,9 @@ import {
   SiYarn,
   SiZoho,
 } from "react-icons/si";
-import { TbBrandCSharp } from "react-icons/tb";
-import { VscCode } from "react-icons/vsc";
 
 import {
+  ContactInfo,
   ProficiencyLevel,
   TechnologyCategory,
   WorkExperienceEntry,
@@ -242,7 +243,7 @@ export const EXPERIENCES: WorkExperienceEntry[] = [
       "Express.js",
       "Flask",
       "PostgreSQL",
-      "Google Cloud Platform",
+      "GCP",
       "Jest",
       "NPM",
       "Looker",
@@ -283,7 +284,7 @@ export const TECH_ICONS: Record<
   jQuery: { icon: SiJquery, color: "#0769AD" },
   Python: { icon: FaPython, color: "#3776AB" },
   Flask: { icon: SiFlask, color: "#000000" },
-  "Google Cloud Platform": { icon: SiGooglecloud, color: "#4285F4" },
+  GCP: { icon: SiGooglecloud, color: "#4285F4" },
   PostgreSQL: { icon: SiPostgresql, color: "#336791" },
   Looker: { icon: SiLooker, color: "#4285F4" },
   "Material-UI": { icon: SiMui, color: "#007FFF" },
@@ -299,6 +300,26 @@ export const TECH_ICONS: Record<
   Yarn: { icon: SiYarn, color: "#2c8ebb" },
   "React Testing Library": { icon: SiTestinglibrary, color: "#e33332" },
   "Styled Components": { icon: SiStyledcomponents, color: "#D26AC2" },
+  MySQL: { icon: SiMysql, color: "#4479A1" },
+  Docker: { icon: SiDocker, color: "#2496ED" },
+  "Material UI": { icon: SiMui, color: "#007FFF" },
+  Zustand: { icon: GiBearFace, color: "#3E383E" },
+  Stripe: { icon: SiStripe, color: "#6772E5" },
+  Firebase: { icon: SiFirebase, color: "#FFCA28" },
+  Figma: { icon: SiFigma, color: "#F24E1E" },
+  "SQL Server": { icon: DiMsqlServer, color: "#CC2927" },
+  "Telegram API": { icon: SiTelegram, color: "#0088cc" },
+  Pandas: { icon: SiPandas, color: "#150458" },
+  Sklearn: { icon: SiScikitlearn, color: "#F7931E" },
+  Emotion: { icon: SiStyledcomponents, color: "#DB7093" },
+  "Testing Library": { icon: SiTestinglibrary, color: "#E33332" },
+  Express: { icon: SiExpress, color: "#000000" },
+  Unity: { icon: SiUnity, color: "#000000" },
+  "C#": { icon: TbBrandCSharp, color: "#239120" },
+  "React Native": { icon: FaReact, color: "#61DAFB" },
+  Expo: { icon: SiExpo, color: "#000000" },
+  "Google Books API": { icon: SiGoogle, color: "#4285F4" },
+  RxJs: { icon: SiReactivex, color: "#B7178C" },
 } as const;
 
 export const PROFICIENCY_CONFIG: Record<
@@ -639,17 +660,17 @@ export const PROJECTS = [
     image: "/projects/caribbean-cinemas.png",
     link: "http://licemcinema.tech",
     repo: "https://github.com/jrodriguezdiazz/cinema-licem",
-    tags: [
-      { name: "React", icon: SiReact, color: "#61DAFB" },
-      { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
-      { name: "MySQL", icon: SiMysql, color: "#4479A1" },
-      { name: "Docker", icon: SiDocker, color: "#2496ED" },
-      { name: "Material UI", icon: SiMui, color: "#007FFF" },
-      { name: "Zustand", icon: GiBearHead, color: "#FF6B35" },
-      { name: "AWS", icon: SiAmazonwebservices, color: "#FF9900" },
-      { name: "Stripe", icon: SiStripe, color: "#635BFF" },
-      { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
-      { name: "Figma", icon: SiFigma, color: "#f24e1e" },
+    technologies: [
+      "React",
+      "Node.js",
+      "MySQL",
+      "Docker",
+      "Material UI",
+      "Zustand",
+      "AWS",
+      "Stripe",
+      "Firebase",
+      "Figma",
     ],
     status: "offline",
     featured: true,
@@ -662,13 +683,7 @@ export const PROJECTS = [
     image: "/projects/belphoebe.png",
     link: "https://t.me/BelphoebeBot",
     repo: "https://github.com/jrodriguezdiazz/Belphoebe",
-    tags: [
-      { name: "Python", icon: SiPython, color: "#3776AB" },
-      { name: "SQL Server", icon: DiMsqlServer, color: "#CC2927" },
-      { name: "Telegram API", icon: SiTelegram, color: "#26A5E4" },
-      { name: "Pandas", icon: SiPandas, color: "#150458" },
-      { name: "Sklearn", icon: SiScikitlearn, color: "#F7931E" },
-    ],
+    technologies: ["Python", "SQL Server", "Telegram API", "Pandas", "Sklearn"],
     status: "offline",
     featured: true,
   },
@@ -680,31 +695,16 @@ export const PROJECTS = [
     image: "/projects/explorando-ando.png",
     link: "https://github.com/jrodriguezdiazz/explorando-ando",
     repo: "https://github.com/jrodriguezdiazz/explorando-ando",
-    tags: [
-      { name: "React", icon: SiReact, color: "#61DAFB" },
-      { name: "Emotion", icon: SiStyledcomponents, color: "#D26AC2" },
-      { name: "Bootstrap", icon: SiBootstrap, color: "#7952B3" },
-      { name: "Testing Library", icon: SiTestinglibrary, color: "#E33332" },
-      { name: "Express", icon: SiExpress, color: "#000000" },
-      { name: "PostgreSQL", icon: SiPostgresql, color: "#336791" },
-      { name: "Zustand", icon: GiBearHead, color: "#FF6B35" },
+    technologies: [
+      "React",
+      "Emotion",
+      "Bootstrap",
+      "Testing Library",
+      "Express",
+      "PostgreSQL",
+      "Zustand",
     ],
     status: "offline",
-    featured: true,
-  },
-  {
-    id: "Dragon-s-Quest",
-    title: "Dragon's-Quest",
-    description:
-      "🎮 Dragon's Quest is an exciting 2D platformer game that takes players on a thrilling adventure. Embark on a quest through vibrant pixelated worlds. 🐲",
-    image: "/projects/dragon-quest.png",
-    link: "https://jrodriguezdiazz.itch.io/dragons-quest",
-    repo: "https://github.com/jrodriguezdiazz/Dragon-s-Quest",
-    tags: [
-      { name: "Unity", icon: SiUnity, color: "#000000" },
-      { name: "C#", icon: TbBrandCSharp, color: "#682876" },
-    ],
-    status: "live",
     featured: true,
   },
   {
@@ -715,13 +715,7 @@ export const PROJECTS = [
     image: "/projects/flixo.png",
     link: "https://github.com/jrodriguezdiazz/Flixo",
     repo: "https://github.com/jrodriguezdiazz/Flixo",
-    tags: [
-      { name: "React Native", icon: SiReact, color: "#61DAFB" },
-      { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
-      { name: "Expo", icon: SiExpo, color: "#000020" },
-      { name: "Yarn", icon: SiYarn, color: "#2C8EBB" },
-      { name: "Zustand", icon: GiBearHead, color: "#FF6B35" },
-    ],
+    technologies: ["React Native", "Firebase", "Expo", "Yarn", "Zustand"],
     status: "offline",
     featured: true,
   },
@@ -733,13 +727,14 @@ export const PROJECTS = [
     image: "/projects/school-administrator.png",
     link: "https://school-administrator-320621.web.app/",
     repo: "https://github.com/jrodriguezdiazz/school-administrator",
-    tags: [
-      { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
-      { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
-      { name: "SQL Server", icon: DiMsqlServer, color: "#CC2927" },
-      { name: "Angular", icon: SiAngular, color: "#DD0031" },
-      { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
-      { name: "RxJs", icon: SiReactivex, color: "#B7178C" },
+    technologies: [
+      "Node.js",
+      "Firebase",
+      "SQL Server",
+      "Angular",
+      "Angular CLI",
+      "TypeScript",
+      "RxJs",
     ],
     status: "live",
     featured: false,
@@ -752,14 +747,21 @@ export const PROJECTS = [
     image: "/projects/book-search-engine.png",
     link: "https://book-search-engine-black.vercel.app",
     repo: "https://github.com/jrodriguezdiazz/book-search-engine",
-    tags: [
-      { name: "React", icon: SiReact, color: "#61DAFB" },
-      { name: "Material-UI", icon: SiMui, color: "#007FFF" },
-      { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
-      { name: "Google Books API", icon: SiGoogle, color: "#4285F4" },
-    ],
+    technologies: ["React", "Material-UI", "TypeScript", "Google Books API"],
     status: "live",
     featured: false,
+  },
+  {
+    id: "Dragon-s-Quest",
+    title: "Dragon's-Quest",
+    description:
+      "🎮 Dragon's Quest is an exciting 2D platformer game that takes players on a thrilling adventure. Embark on a quest through vibrant pixelated worlds. 🐲",
+    image: "/projects/dragon-quest.png",
+    link: "https://jrodriguezdiazz.itch.io/dragons-quest",
+    repo: "https://github.com/jrodriguezdiazz/Dragon-s-Quest",
+    technologies: ["Unity", "C#"],
+    status: "live",
+    featured: true,
   },
 ];
 

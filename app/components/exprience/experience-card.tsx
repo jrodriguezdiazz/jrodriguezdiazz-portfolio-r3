@@ -2,7 +2,7 @@ import { Building2, Calendar, MapPin, Users } from "lucide-react";
 import * as React from "react";
 
 import { CompanyLink } from "@/app/components/exprience/company-link";
-import { TechBadge } from "@/app/components/exprience/tech-badge";
+import { TechBadge } from "@/app/components/common/tech-badge";
 import { ExperienceCardProps } from "@/lib/types";
 import { calculateDuration, formatDateRange } from "@/lib/utils";
 

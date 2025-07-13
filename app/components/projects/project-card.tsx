@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
 
+import { TechBadge } from "@/app/components/common/tech-badge";
 import { STATUS_CONFIG } from "@/lib/constants";
 import { ProjectCardProps } from "@/lib/types";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
@@ -12,7 +13,7 @@ export default function ProjectCard({
   description,
   image,
   link,
-  tags,
+  technologies,
   status,
   repo,
 }: ProjectCardProps) {
@@ -46,18 +47,9 @@ export default function ProjectCard({
           Technologies
         </h4>
         <div className='flex flex-wrap gap-2'>
-          {tags.map((tag, index) => {
-            const IconComponent = tag.icon;
-            return (
-              <span
-                key={index}
-                className='inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800 hover:bg-primary/20 '
-              >
-                <IconComponent size={14} style={{ color: tag.color }} />
-                {tag.name}
-              </span>
-            );
-          })}
+          {technologies.map((tech, idx) => (
+            <TechBadge key={idx} tech={tech} />
+          ))}
         </div>
       </CardContent>
       <CardFooter className='p-4 pt-0'>

@@ -51,7 +51,7 @@ export default function Projects({
               description={project.description}
               image={project.image}
               link={project.link}
-              tags={project.tags}
+              technologies={project.technologies}
               status={project.status}
               featured={project.featured}
               repo={project.repo}
