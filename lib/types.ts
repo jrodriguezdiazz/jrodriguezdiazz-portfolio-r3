@@ -238,3 +238,77 @@ export interface CategoryCardProps {
 export interface SkillBadgeProps {
   skill: TechnologySkill;
 }
+
+export interface ProjectCardProps {
+  title: string;
+  description: string;
+  image: string;
+  link?: string;
+  technologies: string[];
+  status: "live" | "offline";
+  repo: string;
+}
+
+export interface RootLayoutProps {
+  children: React.ReactNode;
+}
+
+// Define types for the hook parameters
+type SortBy = "featured" | "title";
+
+export interface UseProjectsOptions {
+  showFeatured?: boolean;
+  maxProjects?: number | null;
+  sortBy?: SortBy;
+}
+
+export interface CompanyLinkProps {
+  href: string;
+  children: React.ReactNode;
+}
+
+export interface TechBadgeProps {
+  tech: string;
+}
+
+export interface ExperienceCardProps {
+  experience: WorkExperienceEntry;
+}
+
+export type FormStatus = "idle" | "pending" | "success" | "error";
+
+export interface FormData {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
+export interface ContactInfo {
+  icon: React.ComponentType<{ className?: string }>;
+  label: string;
+  value: string;
+  href?: string;
+}
+
+export interface ValidationError {
+  field: string;
+  message: string;
+}
+
+export interface FormFieldProps {
+  label: string;
+  icon: React.ComponentType<{ className?: string }>;
+  error?: string;
+  required?: boolean;
+  children: React.ReactNode;
+}
+
+export interface ContactInfoItemProps {
+  info: ContactInfo;
+}
+
+export interface StatusMessageProps {
+  status: FormStatus;
+  message: string;
+}

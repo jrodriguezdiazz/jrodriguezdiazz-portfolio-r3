@@ -23,18 +23,6 @@ export default function NavBar() {
   return (
     <header className='sticky top-0 z-50 w-full border-b border-gray-200/50 dark:border-gray-800/50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-gray-900/60 shadow-sm'>
       <div className='container mx-auto px-4 flex h-16 items-center justify-between'>
-        {/* Logo/Brand */}
-        <div className='flex items-center'>
-          <Link href='/public#' className='flex items-center space-x-3 group'>
-            <div className='w-8 h-8 rounded-full flex items-center justify-center'>
-              <span className='font-bold text-sm'>JRD</span>
-            </div>
-            <span className='hidden font-bold text-lg sm:inline-block bg-clip-text transition-all duration-300'>
-              Jorge Rodríguez Díaz
-            </span>
-          </Link>
-        </div>
-
         {/* Desktop Navigation */}
         <nav className='hidden md:flex items-center space-x-1'>
           {NAV_ITEMS.map(item => {
