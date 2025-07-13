@@ -1,221 +1,21 @@
 "use client";
 
-import {
-  Mail,
-  User,
-  MessageSquare,
-  Send,
-  CheckCircle2,
-  XCircle,
-  Loader2,
-  MapPin,
-  Linkedin,
-  Github,
-  Clock,
-} from "lucide-react";
+import { Mail, User, MessageSquare, Send, Loader2, Clock } from "lucide-react";
 import { useState } from "react";
 import * as React from "react";
+import { FormStatus } from "react-dom";
 
+import { ContactInfoItem } from "./contact-info-item";
+import { FormField } from "./form-field";
+
+import { StatusMessage } from "@/app/components/contact/status-message";
+import { CONTACT_INFO, RESPONSE_TYPE } from "@/lib/constants";
+import { ValidationError } from "@/lib/types";
 import { event } from "@/lib/gtag";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-
-type FormStatus = "idle" | "pending" | "success" | "error";
-
-interface FormData {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-}
-
-interface ContactInfo {
-  icon: React.ComponentType<{ className?: string }>;
-  label: string;
-  value: string;
-  href?: string;
-}
-
-interface ValidationError {
-  field: string;
-  message: string;
-}
-
-const contactInfo: ContactInfo[] = [
-  {
-    icon: Mail,
-    label: "Email",
-    value: "jrodriguezdiazz@outlook.com",
-    href: "mailto:jrodriguezdiazz@outlook.com",
-  },
-  {
-    icon: MapPin,
-    label: "Location",
-    value: "Espaillat, Dominican Republic",
-  },
-  {
-    icon: Linkedin,
-    label: "LinkedIn",
-    value: "linkedin.com/in/jrodriguezdiazz",
-    href: "https://linkedin.com/in/jrodriguezdiazz",
-  },
-  {
-    icon: Github,
-    label: "GitHub",
-    value: "github.com/jrodriguezdiazz",
-    href: "https://github.com/jrodriguezdiazz",
-  },
-];
-
-const responseTime = "Usually responds within 24 hours";
-
-// Mock submit function - replace with your actual implementation
-const submitContactForm = async (
-  formData: FormData
-): Promise<{ message: string; success: boolean }> => {
-  // Simulate API call
-  console.log("Submitting contact form with data:", formData);
-  await new Promise(resolve => setTimeout(resolve, 2000));
-
-  // Simulate random success/failure for demo
-  const success = Math.random() > 0.3;
-
-  if (success) {
-    return {
-      message: "Thank you for your message! I'll get back to you soon.",
-      success: true,
-    };
-  } else {
-    throw new Error("Failed to send message");
-  }
-};
-
-const validateForm = (formData: FormData): ValidationError[] => {
-  const errors: ValidationError[] = [];
-
-  if (!formData.name.trim()) {
-    errors.push({ field: "name", message: "Name is required" });
-  } else if (formData.name.trim().length < 2) {
-    errors.push({
-      field: "name",
-      message: "Name must be at least 2 characters",
-    });
-  }
-
-  if (!formData.email.trim()) {
-    errors.push({ field: "email", message: "Email is required" });
-  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-    errors.push({
-      field: "email",
-      message: "Please enter a valid email address",
-    });
-  }
-
-  if (!formData.subject.trim()) {
-    errors.push({ field: "subject", message: "Subject is required" });
-  }
-
-  if (!formData.message.trim()) {
-    errors.push({ field: "message", message: "Message is required" });
-  } else if (formData.message.trim().length < 10) {
-    errors.push({
-      field: "message",
-      message: "Message must be at least 10 characters",
-    });
-  }
-
-  return errors;
-};
-
-interface FormFieldProps {
-  label: string;
-  icon: React.ComponentType<{ className?: string }>;
-  error?: string;
-  required?: boolean;
-  children: React.ReactNode;
-}
-
-const FormField: React.FC<FormFieldProps> = ({
-  label,
-  icon: Icon,
-  error,
-  required,
-  children,
-}) => (
-  <div className='space-y-2'>
-    <label className='flex items-center gap-2 text-sm font-medium'>
-      <Icon className='w-4 h-4 text-muted-foreground' />
-      {label}
-      {required && <span className='text-destructive'>*</span>}
-    </label>
-    {children}
-    {error && (
-      <p className='text-sm text-destructive flex items-center gap-1'>
-        <XCircle className='w-3 h-3' />
-        {error}
-      </p>
-    )}
-  </div>
-);
-
-interface ContactInfoItemProps {
-  info: ContactInfo;
-}
-
-const ContactInfoItem: React.FC<ContactInfoItemProps> = ({ info }) => {
-  const content = (
-    <div className='flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors'>
-      <div className='p-2 bg-primary/10 rounded-lg'>
-        <info.icon className='w-4 h-4 text-primary' />
-      </div>
-      <div>
-        <p className='text-sm font-medium'>{info.label}</p>
-        <p className='text-sm text-muted-foreground'>{info.value}</p>
-      </div>
-    </div>
-  );
-
-  if (info.href) {
-    return (
-      <a
-        href={info.href}
-        target='_blank'
-        rel='noopener noreferrer'
-        className='block'
-      >
-        {content}
-      </a>
-    );
-  }
-
-  return content;
-};
-
-interface StatusMessageProps {
-  status: FormStatus;
-  message: string;
-}
-
-const StatusMessage: React.FC<StatusMessageProps> = ({ status, message }) => {
-  if (status === "idle") return null;
-
-  const isSuccess = status === "success";
-  const Icon = isSuccess ? CheckCircle2 : XCircle;
-  const className = isSuccess
-    ? "text-green-700 bg-green-50 border-green-200"
-    : "text-destructive bg-destructive/10 border-destructive/20";
-
-  return (
-    <div
-      className={`p-3 rounded-lg border flex items-center gap-2 ${className}`}
-    >
-      <Icon className='w-4 h-4' />
-      <span className='text-sm font-medium'>{message}</span>
-    </div>
-  );
-};
 
 export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>({
@@ -307,7 +107,7 @@ export default function ContactForm() {
             </div>
 
             <div className='space-y-2'>
-              {contactInfo.map((info, index) => (
+              {CONTACT_INFO.map((info, index) => (
                 <ContactInfoItem key={index} info={info} />
               ))}
             </div>
@@ -315,7 +115,7 @@ export default function ContactForm() {
             <div className='mt-6 p-3 bg-muted/30 rounded-lg'>
               <div className='flex items-center gap-2 text-sm'>
                 <Clock className='w-4 h-4 text-muted-foreground' />
-                <span className='text-muted-foreground'>{responseTime}</span>
+                <span className='text-muted-foreground'>{RESPONSE_TYPE}</span>
               </div>
             </div>
           </div>

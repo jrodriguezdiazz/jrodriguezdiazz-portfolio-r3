@@ -1,41 +1,25 @@
 import * as React from "react";
-import { Suspense, useMemo } from "react";
+import { Suspense } from "react";
 
 import SectionSkeleton from "../common/section-skeleton";
 
 import ProjectCard from "./project-card";
 
-import { PROJECTS } from "@/lib/constants";
+import { UseProjectsOptions } from "@/lib/types";
+import { useProjects } from "@/hooks/use-projects";
 
 export default function Projects({
   showFeatured = false,
   maxProjects = null,
   sortBy = "featured",
-}) {
-  const processedProjects = useMemo(() => {
-    let filtered = [...PROJECTS];
+}: UseProjectsOptions) {
+  const { projects, isEmpty } = useProjects({
+    showFeatured,
+    maxProjects,
+    sortBy,
+  });
 
-    // Filter by featured status if requested
-    if (showFeatured) {
-      filtered = filtered.filter(project => project.featured);
-    }
-
-    // Sort projects
-    if (sortBy === "featured") {
-      filtered.sort((a, b) => Number(b.featured) - Number(a.featured));
-    } else if (sortBy === "title") {
-      filtered.sort((a, b) => a.title.localeCompare(b.title));
-    }
-
-    // Limit number of projects if specified
-    if (maxProjects && maxProjects > 0) {
-      filtered = filtered.slice(0, maxProjects);
-    }
-
-    return filtered;
-  }, [showFeatured, maxProjects, sortBy]);
-
-  if (processedProjects.length === 0) {
+  if (isEmpty) {
     return (
       <div className='text-center py-12'>
         <p className='text-gray-500 text-lg'>No projects to display.</p>
@@ -51,7 +35,7 @@ export default function Projects({
         </p>
       </div>
       <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr'>
-        {processedProjects.map(project => (
+        {projects.map(project => (
           <Suspense
             key={project.id}
             fallback={

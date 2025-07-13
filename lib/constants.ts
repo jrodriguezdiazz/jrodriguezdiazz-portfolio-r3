@@ -3,13 +3,18 @@ import {
   Cloud,
   Code,
   Code2,
+  Github,
   Layers,
+  Linkedin,
   Mail,
+  MapPin,
   Server,
   User,
   Wrench,
 } from "lucide-react";
 import * as React from "react";
+import { BsFileEarmarkSpreadsheet } from "react-icons/bs";
+import { DiMsqlServer } from "react-icons/di";
 import {
   FaAws,
   FaCss3,
@@ -19,19 +24,24 @@ import {
   FaReact,
   FaSass,
 } from "react-icons/fa";
+import { GiBearHead } from "react-icons/gi";
 import {
   SiAmazonwebservices,
   SiAngular,
   SiBootstrap,
+  SiConfluence,
   SiCss3,
   SiD3Dotjs,
   SiDocker,
+  SiExpo,
   SiExpress,
   SiFigma,
+  SiFirebase,
   SiFlask,
   SiGit,
   SiGithub,
   SiGitlab,
+  SiGoogle,
   SiGoogleads,
   SiGooglecloud,
   SiGraphql,
@@ -50,6 +60,7 @@ import {
   SiNextdotjs,
   SiNginx,
   SiNodedotjs,
+  SiNpm,
   SiPandas,
   SiPostgresql,
   SiPostman,
@@ -62,6 +73,7 @@ import {
   SiStripe,
   SiStyledcomponents,
   SiTailwindcss,
+  SiTelegram,
   SiTestinglibrary,
   SiTypescript,
   SiUnity,
@@ -69,12 +81,10 @@ import {
   SiVite,
   SiWebpack,
   SiYarn,
+  SiZoho,
 } from "react-icons/si";
 import { TbBrandCSharp } from "react-icons/tb";
 import { VscCode } from "react-icons/vsc";
-import { DiMsqlServer } from "react-icons/di";
-import { SiExpo, SiFirebase, SiGoogle, SiTelegram } from "react-icons/si";
-import { GiBearHead } from "react-icons/gi";
 
 import {
   ProficiencyLevel,
@@ -107,20 +117,28 @@ export const EXPERIENCES: WorkExperienceEntry[] = [
     ],
     technologies: [
       "JavaScript",
+      "HTML",
+      "CSS",
+      "TypeScript",
       "React",
+      "Styled Components",
       "Next.js",
       "Node.js",
       "Express.js",
-      "HTML",
       "GraphQL",
-      "AWS",
       "MongoDB",
       "Redis",
-      "Jest",
-      "Jira",
-      "Google Ads",
+      "AWS",
       "Jenkins",
+      "Jest",
+      "React Testing Library",
+      "NPM",
+      "Yarn",
+      "NVM",
       "Postman",
+      "Jira",
+      "Confluence",
+      "Google Ads",
     ],
   },
   {
@@ -139,18 +157,21 @@ export const EXPERIENCES: WorkExperienceEntry[] = [
       "Operated within an Agile/SCRUM environment using Jira for backlog management and Confluence for documentation. Collaborated closely with product owners and QA to define acceptance criteria, refine user stories and coordinate deployments through Jenkins pipelines.",
     ],
     technologies: [
+      "JavaScript",
+      "HTML",
+      "CSS",
       "TypeScript",
       "Angular",
       "Angular CLI",
       "RxJS",
       "Node.js",
-      "HTML",
-      "CSS",
       "Jasmine",
+      "Karma",
+      "Postman",
       "GitLab",
       "Jenkins",
       "Jira",
-      "Postman",
+      "Confluence",
     ],
   },
   {
@@ -169,13 +190,16 @@ export const EXPERIENCES: WorkExperienceEntry[] = [
     ],
     technologies: [
       "JavaScript",
-      "Node.js",
-      "Express.js",
       "HTML",
       "CSS",
       "Sass",
-      "SQL",
+      "React",
       "Bootstrap",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "NPM",
+      "Jira",
     ],
   },
   {
@@ -185,14 +209,14 @@ export const EXPERIENCES: WorkExperienceEntry[] = [
     clientLink: "https://cnc.gob.do",
     modality: "On Site",
     position: "Software Developer",
-    startDate: "Jul 2020",
-    endDate: "Oct 2020",
+    startDate: "Jun 2020",
+    endDate: "Nov 2020",
     responsibilities: [
       "Designed and implemented interactive dashboards with D3.js, creating line charts, bar charts, and map graphs that let users explore historical trends, apply category filters, and hover for exact values.",
       "Built a fully responsive UI with HTML5 and CSS3 (Flexbox, Media Queries), ensuring cross-browser compatibility and seamless layouts on desktop, tablet, and mobile. Established a modular design system for reusable chart components and info panels.",
       "Collaborated closely with storytellers and UX designers, running A/B tests and iterating on prototypes based on in-app feedback and usage metrics—resulting in a 31% lift in user satisfaction as measured by post-interact surveys.",
     ],
-    technologies: ["JavaScript", "D3.js", "jQuery", "HTML", "CSS"],
+    technologies: ["JavaScript", "D3.js", "jQuery", "HTML", "CSS", "Jira"],
   },
   {
     company: "IntelliSys D. Corp.",
@@ -209,18 +233,22 @@ export const EXPERIENCES: WorkExperienceEntry[] = [
     ],
     technologies: [
       "JavaScript",
-      "React",
-      "Material-UI",
-      "Node.js",
-      "Express.js",
       "HTML",
       "CSS",
+      "React",
+      "Material-UI",
       "Python",
+      "Node.js",
+      "Express.js",
       "Flask",
-      "GCP",
       "PostgreSQL",
-      "Looker",
+      "Google Cloud Platform",
       "Jest",
+      "NPM",
+      "Looker",
+      "Google Spreadsheets",
+      "Jira",
+      "Zoho",
     ],
   },
 ];
@@ -255,13 +283,22 @@ export const TECH_ICONS: Record<
   jQuery: { icon: SiJquery, color: "#0769AD" },
   Python: { icon: FaPython, color: "#3776AB" },
   Flask: { icon: SiFlask, color: "#000000" },
-  GCP: { icon: SiGooglecloud, color: "#4285F4" },
+  "Google Cloud Platform": { icon: SiGooglecloud, color: "#4285F4" },
   PostgreSQL: { icon: SiPostgresql, color: "#336791" },
   Looker: { icon: SiLooker, color: "#4285F4" },
   "Material-UI": { icon: SiMui, color: "#007FFF" },
   Jasmine: { icon: SiJasmine, color: "#8A4182" },
   Postman: { icon: SiPostman, color: "#FF6C37" },
   Bootstrap: { icon: SiBootstrap, color: "#7952B3" },
+  Zoho: { icon: SiZoho, color: "#0072c6" },
+  "Google Spreadsheets": { icon: BsFileEarmarkSpreadsheet, color: "#34a853" },
+  NPM: { icon: SiNpm, color: "#cb3837" },
+  Karma: { icon: SiJasmine, color: "#8a4182" },
+  Confluence: { icon: SiConfluence, color: "#0052cc" },
+  NVM: { icon: SiNodedotjs, color: "#339933" },
+  Yarn: { icon: SiYarn, color: "#2c8ebb" },
+  "React Testing Library": { icon: SiTestinglibrary, color: "#e33332" },
+  "Styled Components": { icon: SiStyledcomponents, color: "#D26AC2" },
 } as const;
 
 export const PROFICIENCY_CONFIG: Record<
@@ -725,3 +762,46 @@ export const PROJECTS = [
     featured: false,
   },
 ];
+
+export const STATUS_CONFIG = {
+  live: {
+    color: "bg-green-500",
+    text: "Live",
+    textColor: "text-green-700",
+    bgColor: "bg-green-50",
+  },
+  offline: {
+    color: "bg-gray-500",
+    text: "Offline",
+    textColor: "text-gray-700",
+    bgColor: "bg-gray-50",
+  },
+};
+
+export const CONTACT_INFO: ContactInfo[] = [
+  {
+    icon: Mail,
+    label: "Email",
+    value: "jrodriguezdiazz@outlook.com",
+    href: "mailto:jrodriguezdiazz@outlook.com",
+  },
+  {
+    icon: MapPin,
+    label: "Location",
+    value: "Espaillat, Dominican Republic",
+  },
+  {
+    icon: Linkedin,
+    label: "LinkedIn",
+    value: "linkedin.com/in/jrodriguezdiazz",
+    href: "https://linkedin.com/in/jrodriguezdiazz",
+  },
+  {
+    icon: Github,
+    label: "GitHub",
+    value: "github.com/jrodriguezdiazz",
+    href: "https://github.com/jrodriguezdiazz",
+  },
+];
+
+export const RESPONSE_TYPE = "Usually responds within 24 hours";

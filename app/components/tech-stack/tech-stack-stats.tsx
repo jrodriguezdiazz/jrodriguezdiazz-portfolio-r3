@@ -1,24 +1,12 @@
 import * as React from "react";
 
+import { useTechStackStats } from "@/hooks/use-tech-stack-stats";
 import { TechStackStatsProps } from "@/lib/types";
 
 export const TechStackStats: React.FC<TechStackStatsProps> = ({
   technologies,
 }) => {
-  const stats = React.useMemo(() => {
-    const allSkills = technologies.flatMap(cat => cat.skills);
-    const totalSkills = allSkills.length;
-    const coreSkills = allSkills.filter(skill => skill.isCore).length;
-    const expertSkills = allSkills.filter(
-      skill => skill.proficiency === "expert"
-    ).length;
-    const avgExperience = Math.round(
-      allSkills.reduce((sum, skill) => sum + skill.yearsOfExperience, 0) /
-        totalSkills
-    );
-
-    return { totalSkills, coreSkills, expertSkills, avgExperience };
-  }, [technologies]);
+  const stats = useTechStackStats(technologies);
 
   return (
     <div className='grid grid-cols-2 md:grid-cols-4 gap-4 mb-6'>

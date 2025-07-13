@@ -2,6 +2,7 @@ import type React from "react";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 
+import { RootLayoutProps } from "@/lib/types";
 import GoogleAnalytics from "@/components/google-analytics";
 import { GA_TRACKING_ID } from "@/lib/gtag";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -102,10 +103,6 @@ export const viewport: Viewport = {
   maximumScale: 5,
   userScalable: true,
 };
-
-interface RootLayoutProps {
-  children: React.ReactNode;
-}
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (

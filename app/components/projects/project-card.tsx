@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
 
+import { STATUS_CONFIG } from "@/lib/constants";
 import { ProjectCardProps } from "@/lib/types";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 
@@ -15,22 +16,7 @@ export default function ProjectCard({
   status,
   repo,
 }: ProjectCardProps) {
-  const statusConfig = {
-    live: {
-      color: "bg-green-500",
-      text: "Live",
-      textColor: "text-green-700",
-      bgColor: "bg-green-50",
-    },
-    offline: {
-      color: "bg-gray-500",
-      text: "Offline",
-      textColor: "text-gray-700",
-      bgColor: "bg-gray-50",
-    },
-  };
-
-  const currentStatus = statusConfig[status];
+  const currentStatus = STATUS_CONFIG[status];
 
   return (
     <Card className='overflow-hidden'>
@@ -65,7 +51,7 @@ export default function ProjectCard({
             return (
               <span
                 key={index}
-                className='inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800 hover:bg-primary/20'
+                className='inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800 hover:bg-primary/20 '
               >
                 <IconComponent size={14} style={{ color: tag.color }} />
                 {tag.name}
