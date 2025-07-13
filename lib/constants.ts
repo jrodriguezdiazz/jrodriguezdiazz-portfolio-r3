@@ -120,6 +120,7 @@ export const EXPERIENCES: WorkExperienceEntry[] = [
       "Jira",
       "Google Ads",
       "Jenkins",
+      "Postman",
     ],
   },
   {
@@ -148,6 +149,8 @@ export const EXPERIENCES: WorkExperienceEntry[] = [
       "Jasmine",
       "GitLab",
       "Jenkins",
+      "Jira",
+      "Postman",
     ],
   },
   {
@@ -172,6 +175,7 @@ export const EXPERIENCES: WorkExperienceEntry[] = [
       "CSS",
       "Sass",
       "SQL",
+      "Bootstrap",
     ],
   },
   {
@@ -216,6 +220,7 @@ export const EXPERIENCES: WorkExperienceEntry[] = [
       "GCP",
       "PostgreSQL",
       "Looker",
+      "Jest",
     ],
   },
 ];
@@ -255,6 +260,8 @@ export const TECH_ICONS: Record<
   Looker: { icon: SiLooker, color: "#4285F4" },
   "Material-UI": { icon: SiMui, color: "#007FFF" },
   Jasmine: { icon: SiJasmine, color: "#8A4182" },
+  Postman: { icon: SiPostman, color: "#FF6C37" },
+  Bootstrap: { icon: SiBootstrap, color: "#7952B3" },
 } as const;
 
 export const PROFICIENCY_CONFIG: Record<
