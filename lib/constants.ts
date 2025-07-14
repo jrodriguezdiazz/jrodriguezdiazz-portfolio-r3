@@ -9,6 +9,7 @@ import {
   Mail,
   MapPin,
   Server,
+  Twitter,
   User,
   Wrench,
 } from "lucide-react";
@@ -788,11 +789,6 @@ export const CONTACT_INFO: ContactInfo[] = [
     href: "mailto:jrodriguezdiazz@outlook.com",
   },
   {
-    icon: MapPin,
-    label: "Location",
-    value: "Espaillat, Dominican Republic",
-  },
-  {
     icon: Linkedin,
     label: "LinkedIn",
     value: "linkedin.com/in/jrodriguezdiazz",
@@ -803,6 +799,17 @@ export const CONTACT_INFO: ContactInfo[] = [
     label: "GitHub",
     value: "github.com/jrodriguezdiazz",
     href: "https://github.com/jrodriguezdiazz",
+  },
+  {
+    icon: Twitter,
+    label: "Twitter",
+    value: "x.com/jrodriguezdiazz",
+    href: "https://twitter.com/jrodriguezdiazz",
+  },
+  {
+    icon: MapPin,
+    label: "Location",
+    value: "Espaillat, Dominican Republic",
   },
 ];
 
