@@ -9,16 +9,12 @@ import {
   Mail,
   MapPin,
   Server,
-  Twitter,
   User,
   Wrench,
 } from "lucide-react";
 import * as React from "react";
 import { BsFileEarmarkSpreadsheet } from "react-icons/bs";
 import { DiMsqlServer } from "react-icons/di";
-import { GiBearFace } from "react-icons/gi";
-import { TbBrandCSharp } from "react-icons/tb";
-import { VscCode } from "react-icons/vsc";
 import {
   FaAws,
   FaCss3,
@@ -28,6 +24,7 @@ import {
   FaReact,
   FaSass,
 } from "react-icons/fa";
+import { GiBearFace } from "react-icons/gi";
 import {
   SiAmazonwebservices,
   SiAngular,
@@ -86,6 +83,8 @@ import {
   SiYarn,
   SiZoho,
 } from "react-icons/si";
+import { TbBrandCSharp } from "react-icons/tb";
+import { VscCode } from "react-icons/vsc";
 
 import {
   ContactInfo,
@@ -799,12 +798,6 @@ export const CONTACT_INFO: ContactInfo[] = [
     label: "GitHub",
     value: "github.com/jrodriguezdiazz",
     href: "https://github.com/jrodriguezdiazz",
-  },
-  {
-    icon: Twitter,
-    label: "Twitter",
-    value: "x.com/jrodriguezdiazz",
-    href: "https://twitter.com/jrodriguezdiazz",
   },
   {
     icon: MapPin,

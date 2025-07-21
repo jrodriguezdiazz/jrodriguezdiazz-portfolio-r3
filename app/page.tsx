@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import AboutMe from "./components/about-me/about-me";
 import NavBar from "./components/common/nav-bar";
 import SectionSkeleton from "./components/common/section-skeleton";
-import ContactForm from "./components/contact/contact-form";
+import Contact from "./components/contact/contact";
 import WorkExperience from "./components/exprience/work-experience";
 import Projects from "./components/projects/projects";
 import TechStack from "./components/tech-stack/tech-stack";
@@ -47,7 +47,7 @@ export default function Page() {
           <div className='mx-auto max-w-1xl'>
             <SectionHeader>Get in Touch</SectionHeader>
             <Suspense fallback={<SectionSkeleton />}>
-              <ContactForm />
+              <Contact />
             </Suspense>
           </div>
         </Section>
