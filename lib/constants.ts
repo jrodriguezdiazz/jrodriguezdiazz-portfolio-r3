@@ -15,9 +15,6 @@ import {
 import * as React from "react";
 import { BsFileEarmarkSpreadsheet } from "react-icons/bs";
 import { DiMsqlServer } from "react-icons/di";
-import { GiBearFace } from "react-icons/gi";
-import { TbBrandCSharp } from "react-icons/tb";
-import { VscCode } from "react-icons/vsc";
 import {
   FaAws,
   FaCss3,
@@ -27,6 +24,7 @@ import {
   FaReact,
   FaSass,
 } from "react-icons/fa";
+import { GiBearFace } from "react-icons/gi";
 import {
   SiAmazonwebservices,
   SiAngular,
@@ -85,6 +83,8 @@ import {
   SiYarn,
   SiZoho,
 } from "react-icons/si";
+import { TbBrandCSharp } from "react-icons/tb";
+import { VscCode } from "react-icons/vsc";
 
 import {
   ContactInfo,
@@ -788,11 +788,6 @@ export const CONTACT_INFO: ContactInfo[] = [
     href: "mailto:jrodriguezdiazz@outlook.com",
   },
   {
-    icon: MapPin,
-    label: "Location",
-    value: "Espaillat, Dominican Republic",
-  },
-  {
     icon: Linkedin,
     label: "LinkedIn",
     value: "linkedin.com/in/jrodriguezdiazz",
@@ -803,6 +798,11 @@ export const CONTACT_INFO: ContactInfo[] = [
     label: "GitHub",
     value: "github.com/jrodriguezdiazz",
     href: "https://github.com/jrodriguezdiazz",
+  },
+  {
+    icon: MapPin,
+    label: "Location",
+    value: "Espaillat, Dominican Republic",
   },
 ];
 
