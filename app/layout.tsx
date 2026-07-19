@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     siteName: "Jorge Rodríguez Portfolio",
     images: [
       {
-        url: "/profile-photo.jpeg",
+        url: "/profile-photo.jpg",
         width: 1200,
         height: 630,
         alt: "Jorge Rodríguez - Senior Software Engineer",
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     title: "Jorge Rodríguez - Senior Software Engineer",
     description:
       "Senior Software Engineer portfolio showcasing projects and skills in React, Next.js, and modern web technologies",
-    images: ["/profile-photo.jpeg"],
+    images: ["/profile-photo.jpg"],
     creator: "@jrodriguezdiazz",
   },
   robots: {
