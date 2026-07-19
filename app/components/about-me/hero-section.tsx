@@ -1,4 +1,4 @@
-import { Calendar, Code2 } from "lucide-react";
+import { Code2 } from "lucide-react";
 import { Fragment } from "react";
 
 export default function HeroSection() {
@@ -14,10 +14,6 @@ export default function HeroSection() {
           <span className='text-lg font-semibold'>
             Senior Software Engineer
           </span>
-        </div>
-        <div className='flex items-center space-x-2'>
-          <Calendar className='h-4 w-4 text-green-500' />
-          <span>6+ Years Experience</span>
         </div>
       </div>
     </Fragment>
