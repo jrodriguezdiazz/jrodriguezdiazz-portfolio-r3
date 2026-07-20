@@ -3,7 +3,7 @@ import * as React from "react";
 import { twMerge } from "tailwind-merge";
 
 import { ValidationError } from "@/lib/types";
-import { TECH_ICONS } from "@/lib/constants";
+import { EXPERIENCES, TECH_ICONS } from "@/lib/constants";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -48,7 +48,7 @@ export const calculateDuration = (
   } else {
     const years = Math.floor(diffMonths / 12);
     const months = diffMonths % 12;
-    return `${years} year${years > 1 ? "s" : ""}${
+    return `${years} year${years > 1 ? "s and " : ""}${
       months > 0 ? ` ${months} month${months > 1 ? "s" : ""}` : ""
     }`;
   }
@@ -123,4 +123,22 @@ const submitContactForm = async (
   } else {
     throw new Error("Failed to send message");
   }
+};
+
+export const getYearsOfExperience = (): number => {
+  const start = new Date(EXPERIENCES[EXPERIENCES.length - 1].startDate);
+  const now = new Date();
+
+  if (isNaN(start.getTime())) {
+    throw new Error("Invalid start date");
+  }
+
+  let years = now.getFullYear() - start.getFullYear();
+  const monthDiff = now.getMonth() - start.getMonth();
+
+  if (monthDiff < 0 || (monthDiff === 0 && now.getDate() < start.getDate())) {
+    years--;
+  }
+
+  return years;
 };

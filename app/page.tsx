@@ -6,7 +6,7 @@ import SectionSkeleton from "./components/common/section-skeleton";
 import Contact from "./components/contact/contact";
 import WorkExperience from "./components/exprience/work-experience";
 import Projects from "./components/projects/projects";
-import TechStack from "./components/tech-stack/tech-stack";
+// import TechStack from "./components/tech-stack/tech-stack";
 
 import { Section, SectionHeader } from "@/app/components/common/section";
 import Footer from "@/app/components/common/footer";
@@ -37,12 +37,12 @@ export default function Page() {
             <Projects />
           </Suspense>
         </Section>
-        <Section id='tech-stack' className='bg-gray-50/50 dark:bg-gray-900/50'>
+        {/* <Section id='tech-stack' className='bg-gray-50/50 dark:bg-gray-900/50'>
           <SectionHeader>Tech Stack</SectionHeader>
           <Suspense fallback={<SectionSkeleton />}>
             <TechStack />
           </Suspense>
-        </Section>
+        </Section> */}
         <Section id='contact'>
           <div className='mx-auto max-w-1xl'>
             <SectionHeader>Get in Touch</SectionHeader>

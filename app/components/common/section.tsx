@@ -1,6 +1,6 @@
 // Section wrapper component for consistency
 export const Section = ({ id, className = "", children }) => (
-  <section id={id} className={`py-10 ${className}`}>
+  <section id={id} className={`scroll-mt-24 py-10 ${className}`}>
     <div className='container mx-auto px-4 md:px-6 max-w-7xl'>{children}</div>
   </section>
 );

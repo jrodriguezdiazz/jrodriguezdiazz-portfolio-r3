@@ -3,7 +3,7 @@ import { Menu, X, Download } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
-import { NAV_ITEMS } from "@/lib/constants";
+import { NAV_ITEMS, RESUME_LINK } from "@/lib/constants";
 import { event } from "@/lib/gtag";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
@@ -20,6 +20,14 @@ export default function NavBar() {
     });
   };
 
+  const handleNavClick = (href: string, closeMenu = false) => {
+    const target = document.querySelector(href);
+    if (!target) return;
+
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (closeMenu) setIsMenuOpen(false);
+  };
+
   return (
     <header className='sticky top-0 z-50 w-full border-b border-gray-200/50 dark:border-gray-800/50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-gray-900/60 shadow-sm'>
       <div className='container mx-auto px-4 flex h-16 items-center justify-between'>
@@ -28,14 +36,15 @@ export default function NavBar() {
           {NAV_ITEMS.map(item => {
             const Icon = item.icon;
             return (
-              <Link
+              <button
                 key={item.href}
-                href={item.href}
+                type='button'
+                onClick={() => handleNavClick(item.href)}
                 className='flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200'
               >
                 <Icon className='h-4 w-4' />
                 <span>{item.label}</span>
-              </Link>
+              </button>
             );
           })}
         </nav>
@@ -51,7 +60,7 @@ export default function NavBar() {
             <Link
               onClick={handleResumeClick}
               target='_blank'
-              href='https://drive.google.com/file/d/15HpCi03e9owKfG_lAFlZ4hfKb6sdzkOb/view?usp=sharing'
+              href={RESUME_LINK}
               className='flex items-center space-x-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors'
             >
               <Download className='h-4 w-4' />
@@ -86,15 +95,15 @@ export default function NavBar() {
             {NAV_ITEMS.map(item => {
               const Icon = item.icon;
               return (
-                <Link
+                <button
                   key={item.href}
-                  href={item.href}
-                  onClick={() => setIsMenuOpen(false)}
+                  type='button'
+                  onClick={() => handleNavClick(item.href, true)}
                   className='flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200'
                 >
                   <Icon className='h-4 w-4' />
                   <span>{item.label}</span>
-                </Link>
+                </button>
               );
             })}
 
@@ -102,7 +111,7 @@ export default function NavBar() {
             <div className='pt-2 border-t border-gray-200 dark:border-gray-700'>
               <Link
                 target='_blank'
-                href='https://drive.google.com/file/d/15HpCi03e9owKfG_lAFlZ4hfKb6sdzkOb/view?usp=sharing'
+                href={RESUME_LINK}
                 onClick={() => {
                   setIsMenuOpen(false);
                   handleResumeClick();
