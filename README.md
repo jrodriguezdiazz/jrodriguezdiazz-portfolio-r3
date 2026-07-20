@@ -1,30 +1,62 @@
 # Portfolio
 
-_Automatically synced with your [v0.dev](https://v0.dev) deployments_
+A personal portfolio website built with Next.js, React, Tailwind CSS, and pnpm.
 
 [![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/jrodriguezdiazzs-projects/v0-portfolio)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/DPWTpAM94PS)
 
 ## Overview
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+This repository contains a modern portfolio site implemented with:
+- Next.js 15.2.8
+- React 19
+- Tailwind CSS
+- TypeScript
+- pnpm package management
 
-## Deployment
+The app includes improved navigation UX, sticky section offset handling, and content updates for experience and profile sections.
 
-Your project is live at:
+## Getting Started
 
-**[https://vercel.com/jrodriguezdiazzs-projects/v0-portfolio](https://vercel.com/jrodriguezdiazzs-projects/v0-portfolio)**
+### Requirements
+- Node.js `24`
+- `pnpm`
 
-## Build your app
+### Install dependencies
+```bash
+pnpm install
+```
 
-Continue building your app on:
+### Run locally
+```bash
+pnpm dev
+```
 
-**[https://v0.dev/chat/projects/DPWTpAM94PS](https://v0.dev/chat/projects/DPWTpAM94PS)**
+### Build for production
+```bash
+pnpm build
+```
 
-## How It Works
+### Lint and format
+```bash
+pnpm lint
+pnpm format
+```
 
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+## Project Notes
+
+- `package.json` specifies Node engine `24`.
+- `pnpm-workspace.yaml` is included to support workspace-aware builds for dependencies like `sharp` and `unrs-resolver`.
+- The lockfile is managed by `pnpm` in `pnpm-lock.yaml`.
+
+## Scripts
+
+- `pnpm dev` — start development server
+- `pnpm build` — production build
+- `pnpm lint` — run ESLint
+- `pnpm lint:fix` — fix lint issues
+- `pnpm format` — run linter and Prettier
+- `pnpm check` — run lint and format checks
+
+## Contribution
+
+Please use the repository PR template at `.github/pull_request_template.md` for new pull requests.
