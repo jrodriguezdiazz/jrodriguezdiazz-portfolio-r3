@@ -18,25 +18,37 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Jorge Rodríguez - Senior Software Engineer",
+    default: "Jorge Rodríguez — Senior Software Engineer",
     template: "%s | Jorge Rodríguez",
   },
   description:
-    "Senior Software Engineer portfolio showcasing projects and skills in React, Next.js, and modern web technologies",
+    "Senior Software Engineer with 7+ years of experience building scalable, enterprise-grade systems across healthcare, media, and telecommunications. Specializing in React, TypeScript, Flutter, Node.js, GraphQL, and HIPAA-compliant cloud architectures.",
   keywords: [
-    "Software Engineer",
-    "React",
-    "Next.js",
-    "TypeScript",
-    "Frontend Development",
-    "Full Stack Developer",
-    "Portfolio",
     "Jorge Rodríguez",
+    "Senior Software Engineer",
+    "Full Stack Developer",
+    "React Developer",
+    "Next.js Developer",
+    "TypeScript Engineer",
+    "Flutter Developer",
+    "Dart Engineer",
+    "Node.js Developer",
+    "GraphQL Architect",
+    "HIPAA Compliant Developer",
+    "LaunchDarkly Progressive Rollouts",
+    "AWS S3 Cloud Architecture",
+    "Web Performance Tuning",
+    "Mobile App Developer",
+    "Dominican Republic Software Engineer",
+    "Remote Senior Developer",
+    "AI-Assisted Development",
+    "Claude Code Developer",
+    "Cursor AI Engineer",
   ],
   authors: [
     {
       name: "Jorge Rodríguez",
-      url: "https://jrodriguezdiazz.vercel.app/",
+      url: "https://jrodriguezdiazz.vercel.app",
     },
   ],
   creator: "Jorge Rodríguez",
@@ -46,22 +58,22 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://jrodriguezdiazz.vercel.app/"),
+  metadataBase: new URL("https://jrodriguezdiazz.vercel.app"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Jorge Rodríguez - Senior Software Engineer",
+    title: "Jorge Rodríguez — Senior Software Engineer",
     description:
-      "Senior Software Engineer portfolio showcasing projects and skills in React, Next.js, and modern web technologies",
-    url: "https://jrodriguezdiazz.vercel.app/",
+      "Explore the portfolio of Jorge Rodríguez, a Senior Software Engineer specializing in full-stack enterprise architecture, React, Flutter, Node.js, and high-performance cross-functional product delivery.",
+    url: "https://jrodriguezdiazz.vercel.app",
     siteName: "Jorge Rodríguez Portfolio",
     images: [
       {
         url: "/profile-photo.jpg",
         width: 1200,
         height: 630,
-        alt: "Jorge Rodríguez - Senior Software Engineer",
+        alt: "Jorge Rodríguez — Senior Software Engineer",
       },
     ],
     locale: "en_US",
@@ -69,9 +81,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jorge Rodríguez - Senior Software Engineer",
+    title: "Jorge Rodríguez — Senior Software Engineer",
     description:
-      "Senior Software Engineer portfolio showcasing projects and skills in React, Next.js, and modern web technologies",
+      "Senior Software Engineer portfolio showcasing scalable engineering implementations with React, Next.js, Flutter, Node.js, and feature flags with LaunchDarkly.",
     images: ["/profile-photo.jpg"],
     creator: "@jrodriguezdiazz",
   },
@@ -85,11 +97,6 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
-  },
-  verification: {
-    google: "your-google-verification-code", // Replace with actual verification code
-    // yandex: "your-yandex-verification-code",
-    // yahoo: "your-yahoo-verification-code",
   },
 };
 
