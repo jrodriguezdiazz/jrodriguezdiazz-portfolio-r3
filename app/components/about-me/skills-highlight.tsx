@@ -6,7 +6,7 @@ export default function SkillsHighlight() {
           Frontend
         </div>
         <div className='text-sm text-gray-600 dark:text-gray-400'>
-          React, Next.js, TypeScript
+          React, Next.js, TypeScript, Flutter
         </div>
       </div>
       <div className='bg-green-50 dark:bg-green-900/20 rounded-xl p-6 text-center border border-green-200 dark:border-green-800'>
