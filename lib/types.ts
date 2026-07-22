@@ -291,19 +291,6 @@ export interface ContactInfo {
   href?: string;
 }
 
-export interface ValidationError {
-  field: string;
-  message: string;
-}
-
-export interface FormFieldProps {
-  label: string;
-  icon: React.ComponentType<{ className?: string }>;
-  error?: string;
-  required?: boolean;
-  children: React.ReactNode;
-}
-
 export interface ContactInfoItemProps {
   info: ContactInfo;
 }
