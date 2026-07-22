@@ -17,33 +17,35 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  applicationName: "Jorge Rodríguez Portfolio",
   title: {
     default: "Jorge Rodríguez — Senior Software Engineer",
     template: "%s | Jorge Rodríguez",
+    absolute: "Jorge Rodríguez — Senior Software Engineer",
   },
   description:
-    "Senior Software Engineer with 7+ years of experience building scalable, enterprise-grade systems across healthcare, media, and telecommunications. Specializing in React, TypeScript, Flutter, Node.js, GraphQL, and HIPAA-compliant cloud architectures.",
+    "Senior Software Engineer with 7+ years delivering scalable, enterprise-grade web and mobile products using React, Next.js, TypeScript, Node.js, GraphQL, Flutter, and AWS. Open to senior remote engineering roles and growth-stage product opportunities.",
   keywords: [
     "Jorge Rodríguez",
     "Senior Software Engineer",
+    "Senior React Developer",
+    "Next.js Engineer",
     "Full Stack Developer",
-    "React Developer",
-    "Next.js Developer",
-    "TypeScript Engineer",
+    "TypeScript Expert",
+    "Node.js Developer",
+    "GraphQL Engineer",
     "Flutter Developer",
     "Dart Engineer",
-    "Node.js Developer",
-    "GraphQL Architect",
+    "AWS Cloud Engineer",
     "HIPAA Compliant Developer",
-    "LaunchDarkly Progressive Rollouts",
-    "AWS S3 Cloud Architecture",
-    "Web Performance Tuning",
-    "Mobile App Developer",
-    "Dominican Republic Software Engineer",
+    "Healthcare Software Engineer",
+    "AdTech Engineer",
     "Remote Senior Developer",
-    "AI-Assisted Development",
-    "Claude Code Developer",
-    "Cursor AI Engineer",
+    "Performance Optimization",
+    "LaunchDarkly Rollouts",
+    "Web Product Delivery",
+    "Dominican Republic Engineer",
+    "Technical Leadership",
   ],
   authors: [
     {
@@ -53,6 +55,8 @@ export const metadata: Metadata = {
   ],
   creator: "Jorge Rodríguez",
   publisher: "Jorge Rodríguez",
+  category: "Developer Portfolio",
+  classification: "Senior Software Engineer Portfolio",
   formatDetection: {
     email: false,
     address: false,
@@ -65,15 +69,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Jorge Rodríguez — Senior Software Engineer",
     description:
-      "Explore the portfolio of Jorge Rodríguez, a Senior Software Engineer specializing in full-stack enterprise architecture, React, Flutter, Node.js, and high-performance cross-functional product delivery.",
+      "Portfolio of a senior software engineer with proven experience in React, Next.js, TypeScript, Node.js, GraphQL, Flutter and AWS. Includes enterprise delivery stories, cloud architecture, analytics, and performance engineering.",
     url: "https://jrodriguezdiazz.vercel.app",
     siteName: "Jorge Rodríguez Portfolio",
     images: [
       {
-        url: "/profile-photo.jpg",
+        url: "/screenshot-wide.png",
         width: 1200,
         height: 630,
-        alt: "Jorge Rodríguez — Senior Software Engineer",
+        alt: "Jorge Rodríguez — Senior Software Engineer Portfolio",
       },
     ],
     locale: "en_US",
@@ -83,9 +87,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Jorge Rodríguez — Senior Software Engineer",
     description:
-      "Senior Software Engineer portfolio showcasing scalable engineering implementations with React, Next.js, Flutter, Node.js, and feature flags with LaunchDarkly.",
+      "Senior Software Engineer portfolio showcasing React, Next.js, Node.js, GraphQL, Flutter, AWS, and enterprise delivery experience.",
     images: ["/profile-photo.jpg"],
     creator: "@jrodriguezdiazz",
+    site: "@jrodriguezdiazz",
   },
   robots: {
     index: true,
