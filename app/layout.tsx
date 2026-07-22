@@ -88,7 +88,7 @@ export const metadata: Metadata = {
     title: "Jorge Rodríguez — Senior Software Engineer",
     description:
       "Senior Software Engineer portfolio showcasing React, Next.js, Node.js, GraphQL, Flutter, AWS, and enterprise delivery experience.",
-    images: ["/profile-photo.jpg"],
+    images: ["/screenshot-wide.png"],
     creator: "@jrodriguezdiazz",
     site: "@jrodriguezdiazz",
   },
