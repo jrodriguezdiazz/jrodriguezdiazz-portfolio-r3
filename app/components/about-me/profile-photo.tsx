@@ -9,7 +9,7 @@ export default function ProfilePhoto() {
             src='/profile-photo.jpg'
             alt='Jorge Rodríguez - Senior Software Engineer'
             fill
-            className='rounded-full object-cover transition-transform group-hover:scale-105'
+            className='rounded-full object-cover'
             priority
           />
         </div>
