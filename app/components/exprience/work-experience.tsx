@@ -1,6 +1,6 @@
 "use client";
 
-import * as React from "react";
+import { NoExperience } from "./no-experience";
 
 import { ExperienceCard } from "@/app/components/exprience/experience-card";
 import { useWorkExperience } from "@/hooks/use-work-experience";
@@ -8,13 +8,7 @@ import { useWorkExperience } from "@/hooks/use-work-experience";
 export default function WorkExperience() {
   const { experiences, totalExperience, isEmpty } = useWorkExperience();
 
-  if (isEmpty) {
-    return (
-      <div className='text-center py-12'>
-        <p className='text-gray-500 text-lg'>No work experience to display.</p>
-      </div>
-    );
-  }
+  if (isEmpty) return <NoExperience />;
 
   return (
     <div className='space-y-6'>
