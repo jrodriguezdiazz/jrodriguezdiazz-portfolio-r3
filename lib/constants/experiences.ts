@@ -14,7 +14,7 @@ export const EXPERIENCES: WorkExperienceEntry[] = [
       "Unlocked an estimated $460K in projected five-year incremental variable revenue by shipping Spring Health's Medication Management quick view—eligibility-driven client surfacing, one-click referral, and persistent completion state—directly into the care-coordination platform.",
       "Resolved the top-cited Q4 provider NPS/CSAT pain point by architecting HIPAA-compliant file attachments across web and mobile: extended an AWS S3 presigned-URL and virus-scan pipeline via GraphQL on the backend, React Query on web, and Flutter on mobile, with per-role visibility controls enforcing RBAC.",
       "Accelerated provider triage workflows by engineering a React/TypeScript redesign of the clinician portal client panel—clinical quick-filter views, row-level action menus, and role-gated admin and mobile experiences—gated behind LaunchDarkly to enable zero-downtime, percentage-based rollouts.",
-      "Cut feature cycle time by integrating AI-assisted engineering workflows (Claude Code, Cursor AI, OpenAI Codex) into day-to-day development—accelerating scaffolding, test coverage, and code review turnaround while maintaining HIPAA-grade code quality standards.",
+      "Reduced unit test authoring time by ~30% by integrating Claude Code and Cursor AI into the development workflow, redirecting the reclaimed time toward code review depth.",
     ],
     technologies: [
       "React.js",
