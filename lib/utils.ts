@@ -2,6 +2,8 @@ import { clsx, type ClassValue } from "clsx";
 import * as React from "react";
 import { twMerge } from "tailwind-merge";
 
+import { SOCIAL_HOVER_COLORS } from "./constants/social-icons";
+
 import { EXPERIENCES, TECH_ICONS } from "@/lib/constants";
 
 export function cn(...inputs: ClassValue[]) {
@@ -82,4 +84,11 @@ export const getYearsOfExperience = (): number => {
   }
 
   return years;
+};
+
+export const getHoverColors = (label: string) => {
+  return (
+    SOCIAL_HOVER_COLORS[label.toLowerCase()] ||
+    "hover:bg-gray-50 dark:hover:bg-gray-700 group-hover:text-gray-800 dark:group-hover:text-white"
+  );
 };

@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Github, MapPin } from "lucide-react";
+import { Mail, Linkedin, Github, MapPin, Twitter } from "lucide-react";
 
 import { ContactInfo } from "../types";
 
@@ -20,6 +20,12 @@ export const CONTACT_INFO: ContactInfo[] = [
     label: "GitHub",
     value: "github.com/jrodriguezdiazz",
     href: "https://github.com/jrodriguezdiazz",
+  },
+  {
+    icon: Twitter,
+    label: "Twitter",
+    value: "x.com/jrodriguezdiazz",
+    href: "https://x.com/jrodriguezdiazz",
   },
   {
     icon: MapPin,

@@ -239,6 +239,13 @@ export interface SkillBadgeProps {
   skill: TechnologySkill;
 }
 
+export interface ProjectStatusConfig {
+  color: string;
+  text: string;
+  textColor: string;
+  bgColor: string;
+}
+
 export interface ProjectCardProps {
   title: string;
   description: string;
