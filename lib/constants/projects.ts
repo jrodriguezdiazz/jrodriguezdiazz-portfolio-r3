@@ -1,0 +1,128 @@
+export const PROJECTS = [
+  {
+    id: "caribbean-cinemas",
+    title: "Cine Caribbean Cinemas",
+    description:
+      "🎞️ A modern web platform that revolutionizes the Caribbean cinema experience. 🍿",
+    image: "/projects/caribbean-cinemas.png",
+    link: "http://licemcinema.tech",
+    repo: "https://github.com/jrodriguezdiazz/cinema-licem",
+    technologies: [
+      "React",
+      "Node.js",
+      "MySQL",
+      "Docker",
+      "Material UI",
+      "Zustand",
+      "AWS",
+      "Stripe",
+      "Firebase",
+      "Figma",
+    ],
+    status: "offline",
+    featured: true,
+  },
+  {
+    id: "belphoebe",
+    title: "Belphoebe",
+    description:
+      "🤖 Belphoebe is the virtual assistant of LICEM-Retro, her goal is to help you rent films on our platform, where you will find a great diversity of films 💁🏻‍♀️",
+    image: "/projects/belphoebe.png",
+    link: "https://t.me/BelphoebeBot",
+    repo: "https://github.com/jrodriguezdiazz/Belphoebe",
+    technologies: ["Python", "SQL Server", "Telegram API", "Pandas", "Sklearn"],
+    status: "offline",
+    featured: true,
+  },
+  {
+    id: "explorando-ando",
+    title: "Explorando Ando",
+    description:
+      "🌴 Explorando Ando is the web platform for travel lovers in the Dominican Republic. 🇩🇴",
+    image: "/projects/explorando-ando.png",
+    link: "https://github.com/jrodriguezdiazz/explorando-ando",
+    repo: "https://github.com/jrodriguezdiazz/explorando-ando",
+    technologies: [
+      "React",
+      "Emotion",
+      "Bootstrap",
+      "Testing Library",
+      "Express",
+      "PostgreSQL",
+      "Zustand",
+    ],
+    status: "offline",
+    featured: true,
+  },
+  {
+    id: "flixo",
+    title: "Flixo",
+    description:
+      "🤳🏾 Made to share your best moments and smiles with your friends. 🛜",
+    image: "/projects/flixo.png",
+    link: "https://github.com/jrodriguezdiazz/Flixo",
+    repo: "https://github.com/jrodriguezdiazz/Flixo",
+    technologies: ["React Native", "Firebase", "Expo", "Yarn", "Zustand"],
+    status: "offline",
+    featured: true,
+  },
+  {
+    id: "school-administrator",
+    title: "School Administrator",
+    description:
+      "🏫This platform is an example of a system that will allow managing students of a school. 📅",
+    image: "/projects/school-administrator.png",
+    link: "https://school-administrator-320621.web.app/",
+    repo: "https://github.com/jrodriguezdiazz/school-administrator",
+    technologies: [
+      "Node.js",
+      "Firebase",
+      "SQL Server",
+      "Angular",
+      "Angular CLI",
+      "TypeScript",
+      "RxJs",
+    ],
+    status: "live",
+    featured: false,
+  },
+  {
+    id: "book-search-engine",
+    title: "Book Search Engine",
+    description:
+      "🔍 An application that will allow users to search for books by entering a query (Title, Author, etc). Display the resulting books in a list on the page with all the corresponding data. 📚",
+    image: "/projects/book-search-engine.png",
+    link: "https://book-search-engine-black.vercel.app",
+    repo: "https://github.com/jrodriguezdiazz/book-search-engine",
+    technologies: ["React", "Material-UI", "TypeScript", "Google Books API"],
+    status: "live",
+    featured: false,
+  },
+  {
+    id: "Dragon-s-Quest",
+    title: "Dragon's-Quest",
+    description:
+      "🎮 Dragon's Quest is an exciting 2D platformer game that takes players on a thrilling adventure. Embark on a quest through vibrant pixelated worlds. 🐲",
+    image: "/projects/dragon-quest.png",
+    link: "https://jrodriguezdiazz.itch.io/dragons-quest",
+    repo: "https://github.com/jrodriguezdiazz/Dragon-s-Quest",
+    technologies: ["Unity", "C#"],
+    status: "live",
+    featured: true,
+  },
+];
+
+export const STATUS_CONFIG = {
+  live: {
+    color: "bg-green-500",
+    text: "Live",
+    textColor: "text-green-700",
+    bgColor: "bg-green-50",
+  },
+  offline: {
+    color: "bg-gray-500",
+    text: "Offline",
+    textColor: "text-gray-700",
+    bgColor: "bg-gray-50",
+  },
+};

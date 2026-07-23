@@ -23,7 +23,10 @@ export default function BioSection() {
           My proactive problem-solving and commitment to team success have
           positively impacted both my projects and peers. I also bring
           experience across cloud platforms, microservices, and modern
-          JavaScript frameworks, and I enjoy mentoring junior engineers,
+          JavaScript frameworks, and I actively integrate AI-assisted
+          engineering tools—Claude Code, Cursor AI, GitHub Copilot, and OpenAI
+          Codex—into my daily workflow to speed up delivery, testing, and code
+          quality without cutting corners. I enjoy mentoring junior engineers,
           optimizing system performance, and delivering innovative solutions
           across domains.
         </p>
