@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import { TechBadge } from "../common/tech-badge";
+
 interface ExperienceCardDetailsProps {
   responsibilities: string[];
   technologies: string[];
@@ -33,12 +35,7 @@ export function ExperienceCardDetails({
         </h4>
         <div className='flex flex-wrap gap-2'>
           {technologies.map((tech, idx) => (
-            <span
-              key={idx}
-              className='rounded-full border border-muted-foreground/20 px-3 py-1 text-xs text-muted-foreground'
-            >
-              {tech}
-            </span>
+            <TechBadge key={idx} tech={tech} />
           ))}
         </div>
       </div>
