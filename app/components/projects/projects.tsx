@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import SectionSkeleton from "../common/section-skeleton";
 
 import ProjectCard from "./project-card";
+import { NoProjects } from "./no-projects";
 
 import { UseProjectsOptions } from "@/lib/types";
 import { useProjects } from "@/hooks/use-projects";
@@ -19,13 +20,7 @@ export default function Projects({
     sortBy,
   });
 
-  if (isEmpty) {
-    return (
-      <div className='text-center py-12'>
-        <p className='text-gray-500 text-lg'>No projects to display.</p>
-      </div>
-    );
-  }
+  if (isEmpty) return <NoProjects />;
 
   return (
     <section className='space-y-6' aria-labelledby='projects-heading'>
