@@ -11,9 +11,9 @@ export default function AboutMe() {
         <div className='text-center'>
           <ProfilePhoto />
           <HeroSection />
+          <SocialLinks />
           <BioSection />
           <SkillsHighlight />
-          <SocialLinks />
         </div>
       </div>
     </div>
