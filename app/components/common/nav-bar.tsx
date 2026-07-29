@@ -1,5 +1,5 @@
 "use client";
-import { Menu, X, Download } from "lucide-react";
+import { Menu, X, Download, Languages } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -7,9 +7,17 @@ import { NAV_ITEMS, RESUME_LINK } from "@/lib/constants";
 import { event } from "@/lib/gtag";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
+import type { Locale } from "@/i18n/locales";
+import en from "@/i18n/translations/en";
+import es from "@/i18n/translations/es";
 
-export default function NavBar() {
+export interface NavBarProps {
+  locale: Locale;
+}
+
+export default function NavBar({ locale }: NavBarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const currentDictionary = locale === "en" ? en : es;
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -28,6 +36,13 @@ export default function NavBar() {
     if (closeMenu) setIsMenuOpen(false);
   };
 
+  if (!currentDictionary) {
+    return null;
+  }
+
+  const otherLocale = locale === "en" ? "es" : "en";
+  const otherLocaleLabel = otherLocale === "en" ? "EN" : "ES";
+
   return (
     <header className='sticky top-0 z-50 w-full border-b border-gray-200/50 dark:border-gray-800/50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-gray-900/60 shadow-sm'>
       <div className='container mx-auto px-4 flex h-16 items-center justify-between'>
@@ -35,6 +50,15 @@ export default function NavBar() {
         <nav className='hidden md:flex items-center space-x-1'>
           {NAV_ITEMS.map(item => {
             const Icon = item.icon;
+            const translationKey =
+              item.labelKey as keyof typeof currentDictionary;
+            const label =
+              currentDictionary.navigation[
+                translationKey.replace(
+                  "navigation.",
+                  ""
+                ) as keyof typeof currentDictionary.navigation
+              ];
             return (
               <button
                 key={item.href}
@@ -43,7 +67,7 @@ export default function NavBar() {
                 className='flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200'
               >
                 <Icon className='h-4 w-4' />
-                <span>{item.label}</span>
+                <span>{label}</span>
               </button>
             );
           })}
@@ -51,6 +75,15 @@ export default function NavBar() {
 
         {/* Right Side Actions */}
         <div className='flex items-center space-x-3'>
+          <Link
+            href={`/${otherLocale}`}
+            className='hidden sm:flex items-center gap-2 rounded-lg border border-gray-300 px-2.5 py-2 text-sm font-medium text-gray-700 dark:border-gray-600 dark:text-gray-300'
+            aria-label={`Switch to ${otherLocaleLabel}`}
+          >
+            <Languages className='h-4 w-4' />
+            <span>{otherLocaleLabel}</span>
+          </Link>
+
           {/* Resume Button */}
           <Button
             variant='outline'
@@ -64,12 +97,9 @@ export default function NavBar() {
               className='flex items-center space-x-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors'
             >
               <Download className='h-4 w-4' />
-              <span>Resume</span>
+              <span>{currentDictionary.navigation.resume}</span>
             </Link>
           </Button>
-
-          {/* Theme Toggle */}
-          <ThemeToggle />
 
           {/* Mobile Menu Button */}
           <Button
@@ -77,7 +107,7 @@ export default function NavBar() {
             size='sm'
             className='md:hidden p-2'
             onClick={toggleMenu}
-            aria-label='Toggle menu'
+            aria-label={currentDictionary.navigation.toggleMenu}
           >
             {isMenuOpen ? (
               <X className='h-5 w-5' />
@@ -85,6 +115,9 @@ export default function NavBar() {
               <Menu className='h-5 w-5' />
             )}
           </Button>
+
+          {/* Theme Toggle */}
+          <ThemeToggle />
         </div>
       </div>
 
@@ -94,6 +127,15 @@ export default function NavBar() {
           <nav className='container mx-auto px-4 py-4 space-y-2'>
             {NAV_ITEMS.map(item => {
               const Icon = item.icon;
+              const translationKey =
+                item.labelKey as keyof typeof currentDictionary;
+              const label =
+                currentDictionary.navigation[
+                  translationKey.replace(
+                    "navigation.",
+                    ""
+                  ) as keyof typeof currentDictionary.navigation
+                ];
               return (
                 <button
                   key={item.href}
@@ -102,10 +144,20 @@ export default function NavBar() {
                   className='flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200'
                 >
                   <Icon className='h-4 w-4' />
-                  <span>{item.label}</span>
+                  <span>{label}</span>
                 </button>
               );
             })}
+
+            {/* Mobile Language Switcher */}
+            <Link
+              href={`/${otherLocale}`}
+              onClick={() => setIsMenuOpen(false)}
+              className='flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200'
+            >
+              <Languages className='h-4 w-4' />
+              <span>{otherLocaleLabel}</span>
+            </Link>
 
             {/* Mobile Resume Button */}
             <div className='pt-2 border-t border-gray-200 dark:border-gray-700'>
@@ -119,7 +171,7 @@ export default function NavBar() {
                 className='flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200'
               >
                 <Download className='h-4 w-4' />
-                <span>Download Resume</span>
+                <span>{currentDictionary.navigation.downloadResume}</span>
               </Link>
             </div>
           </nav>
