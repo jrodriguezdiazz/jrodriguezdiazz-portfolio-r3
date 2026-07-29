@@ -2,11 +2,22 @@ import * as React from "react";
 import Link from "next/link";
 import { ArrowUpRight, Phone } from "lucide-react";
 
-export function ContactQuickActions() {
+import { getDictionary } from "@/i18n/dictionaries";
+import type { Locale } from "@/i18n/locales";
+
+export interface ContactQuickActionsProps {
+  locale: Locale;
+}
+
+export async function ContactQuickActions({
+  locale,
+}: ContactQuickActionsProps) {
+  const dictionary = await getDictionary(locale);
+
   return (
     <div className='space-y-3'>
       <h3 className='font-semibold text-sm text-muted-foreground uppercase tracking-wide'>
-        Preferred Contact Methods
+        {dictionary.contact.quickActions.title}
       </h3>
 
       <div className='space-y-3'>
@@ -19,9 +30,11 @@ export function ContactQuickActions() {
                     <Phone className='w-4 h-4 text-green-600' />
                   </div>
                   <div>
-                    <p className='font-medium text-sm'>Schedule a Call</p>
+                    <p className='font-medium text-sm'>
+                      {dictionary.contact.quickActions.scheduleCall}
+                    </p>
                     <p className='text-xs text-muted-foreground'>
-                      15-30 min chat
+                      {dictionary.contact.quickActions.scheduleCallDescription}
                     </p>
                   </div>
                 </div>

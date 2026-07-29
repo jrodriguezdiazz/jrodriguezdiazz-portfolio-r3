@@ -10,7 +10,8 @@ export function cn(...inputs: ClassValue[]) {
 
 export const calculateDuration = (
   startDate: string,
-  endDate: string
+  endDate: string,
+  locale: "en" | "es" = "en"
 ): string => {
   const normalizeDate = (dateStr: string): string => {
     if (dateStr === "Present") return new Date().toISOString();
@@ -43,10 +44,19 @@ export const calculateDuration = (
   const diffMonths = Math.ceil(diffTime / (1000 * 60 * 60 * 24 * 30));
 
   if (diffMonths < 12) {
-    return `${diffMonths} month${diffMonths > 1 ? "s" : ""}`;
+    return locale === "es"
+      ? `${diffMonths} mes${diffMonths > 1 ? "es" : ""}`
+      : `${diffMonths} month${diffMonths > 1 ? "s" : ""}`;
   } else {
     const years = Math.floor(diffMonths / 12);
     const months = diffMonths % 12;
+
+    if (locale === "es") {
+      return `${years} año${years > 1 ? "s" : ""}${
+        months > 0 ? ` y ${months} mes${months > 1 ? "es" : ""}` : ""
+      }`;
+    }
+
     return `${years} year${years > 1 ? "s and " : ""}${
       months > 0 ? ` ${months} month${months > 1 ? "s" : ""}` : ""
     }`;
@@ -62,8 +72,13 @@ export const getTechIcon = (
   return TECH_ICONS[tech] || null;
 };
 
-export const formatDateRange = (startDate: string, endDate: string): string => {
-  return `${startDate} - ${endDate}`;
+export const formatDateRange = (
+  startDate: string,
+  endDate: string,
+  locale: "en" | "es" = "en"
+): string => {
+  const separator = locale === "es" ? " - " : " - ";
+  return `${startDate}${separator}${endDate}`;
 };
 
 export const getYearsOfExperience = (): number => {

@@ -8,16 +8,23 @@ import { NoProjects } from "./no-projects";
 
 import { UseProjectsOptions } from "@/lib/types";
 import { useProjects } from "@/hooks/use-projects";
+import type { Locale } from "@/i18n/locales";
+
+interface ProjectsProps extends UseProjectsOptions {
+  locale?: Locale;
+}
 
 export default function Projects({
   showFeatured = false,
   maxProjects = null,
   sortBy = "featured",
-}: UseProjectsOptions) {
+  locale = "en",
+}: ProjectsProps) {
   const { projects, isEmpty } = useProjects({
     showFeatured,
     maxProjects,
     sortBy,
+    locale,
   });
 
   if (isEmpty) return <NoProjects />;
@@ -26,7 +33,9 @@ export default function Projects({
     <section className='space-y-6' aria-labelledby='projects-heading'>
       <div className='text-center space-y-2'>
         <p className='text-muted-foreground'>
-          My technical skills and expertise across different domains
+          {locale === "es"
+            ? "Mis habilidades técnicas y experiencia en diferentes dominios"
+            : "My technical skills and expertise across different domains"}
         </p>
       </div>
       <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr'>

@@ -4,9 +4,17 @@ import { NoExperience } from "./no-experience";
 
 import { ExperienceCard } from "@/app/components/exprience/experience-card";
 import { useWorkExperience } from "@/hooks/use-work-experience";
+import type { Locale } from "@/i18n/locales";
+import en from "@/i18n/translations/en";
+import es from "@/i18n/translations/es";
 
-export default function WorkExperience() {
-  const { experiences, totalExperience, isEmpty } = useWorkExperience();
+export interface WorkExperienceProps {
+  locale?: Locale;
+}
+
+export default function WorkExperience({ locale = "en" }: WorkExperienceProps) {
+  const { experiences, totalExperience, isEmpty } = useWorkExperience(locale);
+  const dictionary = locale === "es" ? es : en;
 
   if (isEmpty) return <NoExperience />;
 
@@ -14,7 +22,10 @@ export default function WorkExperience() {
     <div className='space-y-6'>
       <div className='text-center space-y-2'>
         <p className='text-muted-foreground'>
-          {totalExperience} of professional software development experience
+          {dictionary.experience.summary.replace(
+            "{count}",
+            totalExperience.toString()
+          )}
         </p>
       </div>
 
